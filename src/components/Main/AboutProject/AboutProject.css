@@ -1,0 +1,85 @@
+.about-project{
+    background-color: #202020;
+    padding: 110px 70px;
+}
+.about-project__title{
+    margin: 0;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: -0.04em;
+    color: white;
+    border-bottom: solid 1px #DADADA;
+    padding-bottom: 23px;
+}
+.about-project__info-block{
+    margin: 70px 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.about-project__info-subblock{
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+}
+.about-project__info-title{
+    margin: 0 0 26px;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.04em;
+    color: white;
+}
+.about-project__info-text{
+    margin: 0;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    color: white;
+    max-width: 550px;
+}
+.about-project__timebar{
+    margin-top: 110px;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+.about-project__timbar-block{
+    display: flex;
+    flex-direction: column;
+}
+.about-project__bar{
+    display: flex;
+    min-height: 36px;
+    margin-bottom: 14px;
+}
+.about-project__timebar-title{
+    margin: auto;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0em;
+}
+.about-project__timebar-subtitle{
+    margin: auto;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    letter-spacing: 0px;
+    color: #8B8B8B;
+}
+.about-project__timebar-title_frontend{
+    color: white;
+}
+.about-project__bar_backend{
+    background-color: #3DDC84;
+}
+.about-project__bar_frontend{
+    background-color: #303030;   
+}

@@ -1,0 +1,65 @@
+.techs{
+    background-color: #272727;
+    padding: 100px 70px;
+    display: flex;
+    flex-direction: column;
+}
+.techs__name{
+    margin: 0;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: -0.04em;
+    color: white;
+    border-bottom: solid 1px #DADADA;
+    padding-bottom: 23px;
+    margin-bottom: 90px;
+}
+.techs__info-block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.techs__title{
+    font-family: Inter, Arial, sans-serif;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 58px;
+    letter-spacing: -0.04em;
+    color: white;
+}
+.techs__subscription{
+    font-family: Inter, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: -0.04em;
+    color: white;
+}
+.techs__list{
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0 auto 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(84px,90px));
+    grid-template-rows: repeat(auto-fit, minmax(57px,60px));
+    list-style-type: none;
+    gap: 10px;
+}
+.techs__list-element{
+    min-height: 57px;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+    letter-spacing: -0.04em;
+    color: white;
+    border-radius: 10px;
+    background-color: #303030;
+}

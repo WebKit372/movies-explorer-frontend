@@ -1,0 +1,58 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 70px;
+    background-color: #073042;
+}
+.header__links{
+    margin: 0;
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    font-family: Inter, Arial, sans-serif;
+}
+.header__icon-block{
+    width: 30px;
+    height: 30px;
+    background-color: #0F4157;
+    border-radius: 6px;
+    display: flex;
+    margin: 0;
+}
+.header__icon{
+     margin: auto;
+}
+.header__info-block{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+.header__login-block{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3DDC84;
+    border-radius: 3px;
+    height: 32px;
+    width: 76px;
+    margin: 0 0 0 30px;
+}
+.header_films-block{
+    display: flex;
+    flex-direction: row;
+    margin: 0 50px 0;
+    gap: 20px;
+}
+.header__account-block{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 13px;
+}
+.header__links_auth{
+    font-size: 12px;
+    line-height: 16px;   
+}
