@@ -1,12 +1,16 @@
 import '../../index.css'
+import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
+import Movies from '../Movies/Movies';
 function App() {
   return (
-    <div className="App">
+    <>
       <Header authorized={false} />
       <Main/>
-    </div>
+      <Movies/>
+      <Footer/>
+    </>
   );
 }
 

@@ -10,7 +10,7 @@
     font-size: 22px;
     font-weight: 400;
     line-height: 27px;
-    letter-spacing: -0.04em;
+    letter-spacing: -0.04em;    
     color: white;
     border-bottom: solid 1px #DADADA;
     padding-bottom: 23px;
@@ -22,20 +22,26 @@
     align-items: center;
 }
 .techs__title{
+    margin: 0;
     font-family: Inter, Arial, sans-serif;
     font-size: 50px;
     font-weight: 400;
     line-height: 58px;
     letter-spacing: -0.04em;
     color: white;
+    margin-bottom: 26px;
 }
 .techs__subscription{
+    max-width: 460px;
+    margin: 0;
+    text-align: center;
     font-family: Inter, Arial, sans-serif;
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
     letter-spacing: -0.04em;
     color: white;
+    margin-bottom: 100px;
 }
 .techs__list{
     max-width: 100%;
