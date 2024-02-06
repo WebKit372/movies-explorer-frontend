@@ -7,10 +7,10 @@ export default function SearchForm(){
                 <button className="search-form__button">Поиск</button>
             </div>
             <div className='search-form__checkbox-block'>
-            <div className="search-form__checkbox-form">
+            <label className="search-form__checkbox-form">
                 <input type="checkbox" className="search-form__checkbox"/>
                 <div className="search-form__slider"/>
-            </div>
+            </label>
             <label className="search-form__checkbox-text">Короткометражки</label>
             </div>
         </form>

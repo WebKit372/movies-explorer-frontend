@@ -58,8 +58,9 @@
 }
 .aboutme__avatar{
     max-width: 270px;
-    max-height: 372px;
-    object-fit: contain;
+    height: 327px;
+    object-fit: cover;
+    border-radius: 10px;
 }
 .aboutme__link{
     align-self: flex-start;

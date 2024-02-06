@@ -10,7 +10,7 @@
     font-weight: 400;
     line-height: 20px;
     letter-spacing: 0px;
-    margin-bottom: 50px;
+    margin-bottom: 51px;
 }
 .portfolio__list{
     display: flex;
@@ -24,7 +24,7 @@
     flex-direction: row;
     justify-content: space-between;
     border-bottom: solid 1px #424242;
-    padding-bottom: 23px;
+    padding-bottom: 20px;
 }
 .portfolio__element:last-of-type{
     border-bottom: none;
