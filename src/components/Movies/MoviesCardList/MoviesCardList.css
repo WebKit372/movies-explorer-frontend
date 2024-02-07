@@ -1,0 +1,9 @@
+.moviescardlist{
+    padding: 70px 70px 80px;
+    background-color:#202020;
+    display: grid;
+    grid-template-rows: repeat(auto-fit, minmax(300px, 360px));
+    grid-template-columns: repeat(auto-fit, minmax(271px,319px));
+    justify-content: center;
+    gap:32px;
+}
