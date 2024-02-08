@@ -1,10 +1,9 @@
 import './MoviesCard.css'
-import ok from '../../../images/icon__COLOR_invisible.svg'
-import card from '../../../images/pic__COLOR_pic.png';
+import card from '../../images/pic__COLOR_pic.png';
 import React from 'react';
 export default function MoviesCard(props){
     const [Active, setActive] = React.useState(true);
-    const buttonClass = `movies-card__button ${Active ? 'movies-card__button_active' : ''}`
+    const buttonClass = `movies-card__button ${Active && props.type === 'find' ? 'movies-card__button_active' : ''}`
     function changeButton(){
         if(Active){
             setActive(false);
@@ -21,8 +20,8 @@ export default function MoviesCard(props){
             </div>
             <img src={card} className='movies-card__image' alt='Фотография из фильма'/>
             <button className={buttonClass} onClick={changeButton}>
-                {!Active? 'Сохранить' : 
-                <img src={ok} alt='Галочка'/>}
+                {!Active && props.type === 'find' ? 'Сохранить' : 
+                <img src={props.image} alt='Галочка'/>}
                 </button>
         </div>
     )

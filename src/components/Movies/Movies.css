@@ -1,0 +1,5 @@
+.movies{
+    background-color: rgba(32, 32, 32, 1);
+    height: 100%;
+    flex-grow: 1;
+}

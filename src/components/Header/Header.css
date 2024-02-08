@@ -13,6 +13,10 @@
     font-weight: 400;
     line-height: 18px;
     font-family: Inter, Arial, sans-serif;
+    text-decoration: none;
+}
+.header__links_active{
+    font-weight: 500;
 }
 .header__icon-block{
     width: 30px;

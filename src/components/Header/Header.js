@@ -1,17 +1,20 @@
 import React from 'react';
 import './Header.css'
+import { NavLink } from 'react-router-dom';
 import icon from '../../images/header-logo.svg';
 import logo from '../../images/logo.svg';
 
 export default function Header (props) {
  return (
     <div className="header">
-        <img src={logo} className='header__logo' alt='Логотип'/>
+        <NavLink to="/">
+            <img src={logo} className='header__logo' alt='Логотип'/>
+        </NavLink>
             {props.authorized?
                 <div className="header__info-block">
                     <div className="header_films-block">
-                        <a className="header__links">Фильмы</a>
-                        <a className="header__links">Сохранённые Фильмы</a>
+                        <NavLink to="/movies" className={({isActive}) => `header__links ${isActive? "header__links_active" : ""}`}>Фильмы</NavLink>
+                        <NavLink to="/saved-movies" className={({isActive}) => `header__links ${isActive? "header__links_active" : ""}`}>Сохранённые Фильмы</NavLink>
                     </div>
                     <div className='header__account-block'>
                         <a className="header__links">Аккаунт</a>

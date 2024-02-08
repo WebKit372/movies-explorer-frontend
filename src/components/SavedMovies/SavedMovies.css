@@ -1,0 +1,5 @@
+.saved-movies{
+    height: 100%;
+    background-color: rgba(32, 32, 32, 1);
+    flex-grow: 1;
+}
