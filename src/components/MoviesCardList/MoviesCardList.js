@@ -4,44 +4,7 @@ export default function MoviesCardList(props){
     return (
         <main className='moviescardlist'>
             <div className='moviescardlist__cards'>
-                <MoviesCard type={'find'} image={props.image} name='Абракадабра' duration='12'/>
-                <MoviesCard type={'find'} image={props.image} name='Абракадабра' duration='12'/>
-                <MoviesCard type={'find'} image={props.image} name='Абракадабра' duration='12'/>
-                <MoviesCard type={'find'} image={props.image} name='Абракадабра' duration='12'/>
-                <MoviesCard type={'find'} image={props.image} name='Абракадабра' duration='12'/>
-                <MoviesCard type={'find'} image={props.image} name='Абракадабра' duration='12'/>
-                <MoviesCard type={'find'} image={props.image} name='Абракадабра' duration='12'/>
-                <MoviesCard type={'find'} image={props.image} name='Абракадабра' duration='12'/>
-                <MoviesCard type={'find'} image={props.image} name='Абракадабра' duration='12'/>
-                <MoviesCard type={'find'} image={props.image} name='Абракадабра' duration='12'/>
-                <MoviesCard type={'find'} image={props.image} name='Абракадабра' duration='12'/>
-                <MoviesCard type={'find'} image={props.image} name='Абракадабра' duration='12'/>
-                <MoviesCard type={'find'} image={props.image} name='Абракадабра' duration='12'/>
-                <MoviesCard type={'find'} image={props.image} name='Абракадабра' duration='12'/>
-                <MoviesCard type={'find'} image={props.image} name='Абракадабра' duration='12'/>
-                <MoviesCard type={'find'} image={props.image} name='Абракадабра' duration='12'/>
-                <MoviesCard type={'find'} image={props.image} name='Абракадабра' duration='12'/>
-                <MoviesCard type={'find'} image={props.image} name='Абракадабра' duration='12'/>
-                <MoviesCard type={'find'} image={props.image} name='Абракадабра' duration='12'/>
-                <MoviesCard type={'find'} image={props.image} name='Абракадабра' duration='12'/>
-                <MoviesCard type={'find'} image={props.image} name='Абракадабра' duration='12'/>
-                <MoviesCard type={'find'} image={props.image} name='Абракадабра' duration='12'/>
-                <MoviesCard type={'find'} image={props.image} name='Абракадабра' duration='12'/>
-                <MoviesCard type={'find'} image={props.image} name='Абракадабра' duration='12'/>
-                <MoviesCard type={'find'} image={props.image} name='Абракадабра' duration='12'/>
-                <MoviesCard type={'find'} image={props.image} name='Абракадабра' duration='12'/>
-                <MoviesCard type={'find'} image={props.image} name='Абракадабра' duration='12'/>
-                <MoviesCard type={'find'} image={props.image} name='Абракадабра' duration='12'/>
-                <MoviesCard type={'find'} image={props.image} name='Абракадабра' duration='12'/>
-                <MoviesCard type={'find'} image={props.image} name='Абракадабра' duration='12'/>
-                <MoviesCard type={'find'} image={props.image} name='Абракадабра' duration='12'/>
-                <MoviesCard type={'find'} image={props.image} name='Абракадабра' duration='12'/>
-                <MoviesCard type={'find'} image={props.image} name='Абракадабра' duration='12'/>
-                <MoviesCard type={'find'} image={props.image} name='Абракадабра' duration='12'/>
-                <MoviesCard type={'find'} image={props.image} name='Абракадабра' duration='12'/>
-                <MoviesCard type={'find'} image={props.image} name='Абракадабра' duration='12'/>
-                <MoviesCard type={'find'} image={props.image} name='Абракадабра' duration='12'/>
-                <MoviesCard type={'find'} image={props.image} name='Абракадабра' duration='12'/>
+                <MoviesCard type={'save'} image={props.image} name='Абракадабра' duration='12'/>
                 <MoviesCard type={'find'} image={props.image} name='Абракадабра' duration='12'/>
                 <MoviesCard type={'find'} image={props.image} name='Абракадабра' duration='12'/>
                 <MoviesCard type={'find'} image={props.image} name='Абракадабра' duration='12'/>

@@ -7,11 +7,11 @@ import Portfolio from "./Portfolio/Portfolio"
 export default function Main(){
     return (
         <main className='main'>
-            <Promo/>
-            <AboutProject/>
-            <Techs/>
-            <AboutMe/>
-            <Portfolio/>
+                <Promo/>
+                <AboutProject/>
+                <Techs/>
+                <AboutMe/>
+                <Portfolio/>
         </main>
     )
 }

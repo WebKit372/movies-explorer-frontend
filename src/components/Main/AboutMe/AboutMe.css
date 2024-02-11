@@ -1,8 +1,13 @@
 .aboutme{
     background-color: #202020;
+}
+.aboutme__block{
+    margin: 0 auto;
+    max-width: 1280px;
     padding: 110px 70px 0;
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
 }
 .aboutme__name{
     margin: 0;

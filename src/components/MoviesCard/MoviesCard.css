@@ -5,6 +5,9 @@
     flex-direction: column;
     padding: 18px 0;
     border-radius: 6px;
+    max-width: 360px;
+    max-height: 319px;
+    width: 100%;
 }
 .movies-card__info{
     display: flex;
@@ -32,7 +35,7 @@
     color: #8B8B8B;
 }
 .movies-card__image{
-    object-fit: none;
+    object-fit: contain;
 }
 .movies-card__button{
     font-family: Inter, Arial, Helvetica, sans-serif;
@@ -53,4 +56,10 @@
 }
 .movies-card__button_active{
     background-color: #EE3465;
+}
+@media screen and (max-width: 768px){
+    .movies-card{
+        max-width: 342px;
+        max-height: 309px;
+    }
 }

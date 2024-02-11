@@ -1,8 +1,13 @@
 .techs{
     background-color: #272727;
+}
+.techs__block{
+    max-width: 1280px;
     padding: 100px 70px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
 }
 .techs__name{
     margin: 0;

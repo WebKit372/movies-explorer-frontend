@@ -1,8 +1,13 @@
 .footer{
+    background-color: #202020;
+}
+.footer__block{
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 72px 70px 20px;
     display: flex;
     flex-direction: column;
-    background-color: #202020;
-    padding: 79px 70px 20px;
+    box-sizing: border-box;
 }
 .footer__title{
     text-align: center;
@@ -34,4 +39,9 @@
 .footer__links{
     display: flex;
     gap: 20px;
+}
+@media screen and (max-width: 768px){
+    .footer__block{
+        padding: 72px 30px 20px;
+    }
 }
