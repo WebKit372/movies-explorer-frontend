@@ -88,3 +88,21 @@
 .about-project__bar_frontend{
     background-color: #303030;   
 }
+@media screen and (max-width: 768px) {
+    .about-project__block{
+        padding: 90px 50px;
+    }
+    .about-project__info-block{
+        column-gap: 30px;
+    }
+    .about-project__info-text{
+        font-size: 12px;
+        line-height: 18px;
+    }
+    .about-project__info-title{
+        margin-bottom: 22px;
+    }
+    .about-project__timebar{
+        margin-top: 93px;
+    }
+}

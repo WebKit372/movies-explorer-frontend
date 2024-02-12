@@ -45,3 +45,19 @@
     letter-spacing: -0.04em;
     color: white;
 }
+@media screen and (max-width:768px) {
+    .portfolio__block{
+        padding: 91px  50px 90px;
+    } 
+    .portfolio__name{
+        font-size: 28px;
+    }
+    .portfolio__element{
+        padding-bottom: 18px;
+    }
+    .portfolio__name_arrow{
+        position: relative;
+        top: 3.5px;
+        right: 0.5px;
+    }
+}

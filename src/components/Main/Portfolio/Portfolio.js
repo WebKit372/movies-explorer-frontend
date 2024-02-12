@@ -7,15 +7,15 @@ export default function Portfolio(){
                 <ul className="portfolio__list">
                     <div className="portfolio__element">
                         <h2 className='portfolio__name'>Статичный сайт</h2>
-                        <p className='portfolio__name'>↗</p>
+                        <p className='portfolio__name portfolio__name_arrow'>↗</p>
                     </div>
                     <div className="portfolio__element">
                         <h2 className='portfolio__name'>Адаптивный сайт</h2>
-                        <p className='portfolio__name'>↗</p>
+                        <p className='portfolio__name portfolio__name_arrow'>↗</p>
                     </div>
                     <div className="portfolio__element">
                         <h2 className='portfolio__name'>Одностраничное приложение</h2>
-                        <p className='portfolio__name'>↗</p>
+                        <p className='portfolio__name portfolio__name_arrow'>↗</p>
                     </div>
                 </ul>
             </div>
