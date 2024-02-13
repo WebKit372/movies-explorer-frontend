@@ -111,3 +111,40 @@
         flex-wrap: wrap-reverse;
     }
 }
+@media screen and (max-width:768px) {
+    .aboutme__block{
+        padding: 70px 14px 0; 
+    }
+    .aboutme__name{
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: -0.04em;
+        padding-bottom: 28px;
+        margin-bottom: 60px;      
+    }
+    .aboutme__avatar{
+        margin: 0 auto;
+        max-width: 292px;
+        height: 352px;
+    }
+    .aboutme__title{
+        font-size: 30px;
+        line-height: 36px;
+        letter-spacing: -0.04em;
+        margin-bottom: 20px;
+    }
+    .aboutme__info-block{
+        gap: 40px
+    }
+    .aboutme__subtitle{
+        font-size: 11px;
+        line-height: 16px;
+        letter-spacing: 0px;
+    }
+    .aboutme__subscription{
+        font-size: 11px;
+        line-height: 16px;
+        letter-spacing: 0px;
+        margin-bottom: 40px;
+    }
+}
