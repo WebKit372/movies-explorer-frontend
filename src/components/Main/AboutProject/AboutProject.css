@@ -106,3 +106,46 @@
         margin-top: 93px;
     }
 }
+@media screen and (max-width: 320px) {
+    .about-project__block{
+        padding: 70px 18px; 
+    }
+    .about-project__title{
+        font-size: 18px;
+        line-height: 21.78px;
+        letter-spacing: -0.04em;
+        padding-bottom: 28px;
+    }
+    .about-project__info-block{
+        margin-top: 60px;
+        flex-direction: column;
+        row-gap: 56px;
+    }
+    .about-project__info-title{
+        font-size: 18px;
+        line-height: 21.78px;
+        letter-spacing: -0.04em;
+        margin-bottom: 16px;
+    }
+    .about-project__info-text{
+        font-size: 11px;
+        line-height: 16px;
+    }
+    .about-project__timebar{
+        margin-top: 60px;
+        grid-template-columns: 1fr 1.84fr;
+    }
+    .about-project__timebar-title{
+        position: relative;
+        top: 1px;
+        font-size: 11px;
+        line-height: 13px;
+    }
+    .about-project__bar{
+        margin-bottom: 10px;
+    }
+    .about-project__timebar-subtitle{
+        font-size: 11px;
+        line-height: 13px;
+    }
+}

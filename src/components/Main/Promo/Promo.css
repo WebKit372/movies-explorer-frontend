@@ -101,3 +101,24 @@
         margin: 75px auto 0;
     }
 }
+@media screen and (max-width: 320px) {
+    .promo__block{
+        padding: 70px 10px 30px;
+    }
+    .promo__image{
+        max-width: 210px;
+        max-height: 206px;
+        margin-bottom: 41px;
+    }
+    .promo__title{
+        position: static;
+        font-family: Inter;
+        font-size: 30px;
+        line-height: 38px;
+        max-width: 300px;
+        letter-spacing: -0.04em;
+    }
+    .promo__button-block{
+        margin-top: 67px;
+    }
+}

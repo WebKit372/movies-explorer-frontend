@@ -17,13 +17,13 @@ export default function AboutProject(){
                 <div className="about-project__timebar">
                     <div className="about-project__timbar-block">
                         <div className="about-project__bar about-project__bar_backend">
-                            <h3 className="about-project__timebar-title about-project__timebar-title_backend">1 Неделя</h3>
+                            <h3 className="about-project__timebar-title about-project__timebar-title_backend">1 неделя</h3>
                         </div>
                         <p className="about-project__timebar-subtitle">Back-end</p>
                     </div>
                     <div className="about-project__timbar-block">
                         <div className="about-project__bar about-project__bar_frontend">
-                            <h3 className="about-project__timebar-title about-project__timebar-title_frontend">4 Недели</h3>
+                            <h3 className="about-project__timebar-title about-project__timebar-title_frontend">4 недели</h3>
                         </div>
                         <p className="about-project__timebar-subtitle">Front-end</p>
                     </div>

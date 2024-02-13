@@ -170,3 +170,20 @@
     display: none;
   }
 }
+@media screen and (max-width: 320px){
+  .header__block{
+    padding: 18px 14px;
+  }
+  .header__links{
+    font-family: Inter;
+    font-size: 10px;
+    line-height: 16px;
+  }
+  .header__login-block{
+    position: relative;
+    top: -2px;
+    max-width: 54px;
+    max-height:26px;
+    margin-left: 14px;
+  }
+}

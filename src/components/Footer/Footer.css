@@ -52,3 +52,8 @@
         padding: 79px 30px 20px;
     }
 }
+@media screen and (max-width: 320px){
+    .footer__block{
+        padding: 79px 30px 20px;
+    }
+}
