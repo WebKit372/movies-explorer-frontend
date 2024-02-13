@@ -18,7 +18,7 @@ function App() {
   return (
     <div className='page'>
     { isShowHeader?
-    <Header authorized={false} location={location} />:
+    <Header authorized={true} location={location} />:
     ""
     }
     

@@ -7,8 +7,8 @@ export default function Footer(){
                 <div className='footer__info'>
                     <p className='footer__text'>© 2024</p>
                     <div className='footer__links'>
-                        <a className='footer__text'>Яндекс.Практикум</a>
-                        <a className='footer__text'>Github</a>
+                        <a href="https://practicum.yandex.ru/" rel="noreferrer" target='_blank' className='footer__text footer__link'>Яндекс.Практикум</a>
+                        <a href="https://github.com/WebKit372" rel="noreferrer" target='_blank' className='footer__text footer__link'>Github</a>
                     </div>
                 </div>
             </div>

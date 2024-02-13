@@ -6,7 +6,7 @@ export default function Movies(props){
     return (
         <main className='movies'>
             <SearchForm/>
-            <MoviesCardList isOverFilled={props.isOverFilled} image={ok}/>
+            <MoviesCardList type='find' isOverFilled={props.isOverFilled} image={ok}/>
         </main>
     )
 }

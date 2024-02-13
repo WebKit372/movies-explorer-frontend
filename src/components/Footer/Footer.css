@@ -35,10 +35,17 @@
     line-height: 16px;
     letter-spacing: 0px;
     color: #FFFFFF;
+    text-decoration: none;
 }
 .footer__links{
     display: flex;
     gap: 20px;
+}
+.footer__link{
+    transition: opacity .2s;
+}
+.footer__link:hover{
+    opacity: .7;
 }
 @media screen and (max-width: 768px){
     .footer__block{

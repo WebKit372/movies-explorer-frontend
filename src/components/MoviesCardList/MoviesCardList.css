@@ -29,15 +29,24 @@
     color: white;
     border-radius: 6px;
     box-sizing: border-box;
+    transition: opacity .2s;
+    cursor: pointer;
+}
+.moviescardlist__button:hover{
+    opacity: .8;
 }
 @media screen and (max-width: 768px){
     .moviescardlist{
-        padding: 70px 30px 86px;
+        padding: 70px 30px 80px;
     }
     .moviescardlist__cards{
         grid-template-rows: repeat(auto-fill, minmax(271px,1fr));
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         justify-content: center;
-        gap:24px;
+        column-gap:24px;
+        row-gap: 35px;
+    }
+    .moviescardlist__button{
+        margin: 80px auto 0;
     }
    }

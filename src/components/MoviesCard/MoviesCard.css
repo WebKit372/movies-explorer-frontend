@@ -1,13 +1,16 @@
 .movies-card{
+    display: none;
     background-color: #222222;
     box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.08);
-    display: flex;
     flex-direction: column;
     padding: 18px 0;
     border-radius: 6px;
     max-width: 360px;
     max-height: 319px;
     width: 100%;
+}
+.movies-card:nth-child(-n + 12){
+    display: flex;
 }
 .movies-card__info{
     display: flex;
@@ -38,6 +41,7 @@
     object-fit: contain;
 }
 .movies-card__button{
+    display: flex;
     font-family: Inter, Arial, Helvetica, sans-serif;
     font-size: 12px;
     font-weight: 400;
@@ -53,6 +57,12 @@
     border-radius: 30px;
     transition: background-color .5s;
     cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    transition: opacity .2s;
+}
+.movies-card__button:hover{
+    opacity: .8;
 }
 .movies-card__button_active{
     background-color: #EE3465;
@@ -61,5 +71,8 @@
     .movies-card{
         max-width: 342px;
         max-height: 309px;
+    }
+    .movies-card:nth-child(-n + 8){
+        display: flex;
     }
 }

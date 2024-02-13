@@ -44,6 +44,10 @@
     line-height: 50px;
     letter-spacing: -0.04em;
     color: white;
+    text-decoration: none;
+}
+.portfolio__name:hover:not(.portfolio__name_arrow){
+    opacity: .7;  
 }
 @media screen and (max-width:768px) {
     .portfolio__block{

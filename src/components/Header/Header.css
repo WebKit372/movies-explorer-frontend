@@ -21,6 +21,10 @@
   line-height: 18px;
   font-family: Inter, Arial, sans-serif;
   text-decoration: none;
+  transition: opacity .2s ease-in-out;
+}
+.header__links:hover{
+  opacity: .7;
 }
 .header__links_active{
   font-weight: 500;
@@ -71,10 +75,17 @@
   display: none;
 }
 .header__button-open{
+  cursor: pointer;
   display: none;
 }
 .header__links_signin{
   color: black;
+}
+.header__logo{
+  transition: opacity .2s ease-in-out;
+}
+.header__logo:hover{
+  opacity: .7;
 }
 @media screen and (max-width: 768px){
   .header__block{
@@ -143,6 +154,11 @@
     background-image: url('../../images/close\ logo.svg');
     background-color: inherit;
     border: none;
+    cursor: pointer;
+    transition: opacity .2s;
+  }
+  .header__button-close:hover{
+    opacity: .8;
   }
   .header__account-block{
     margin: 0 auto 92px;

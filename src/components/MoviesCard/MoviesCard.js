@@ -5,12 +5,13 @@ export default function MoviesCard(props){
     const [Active, setActive] = React.useState(true);
     const buttonClass = `movies-card__button ${Active && props.type === 'find' ? 'movies-card__button_active' : ''}`
     function changeButton(){
+    if(props.type === 'find'){
         if(Active){
             setActive(false);
         } else{
             setActive(true);
         }
-
+    }
     }
     return(
         <div className='movies-card'>

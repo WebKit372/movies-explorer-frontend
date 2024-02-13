@@ -24,6 +24,7 @@
 .aboutme__info-block{
     display: flex;
     justify-content: space-between;
+    gap:20px;
 }
 .aboutme__info{
     display: flex;
@@ -78,6 +79,10 @@
     letter-spacing: 0em;
     color: white;
     text-decoration: none;
+    transition: opacity .2s;
+}
+.aboutme__link:hover{
+    opacity: .7;
 }
 @media screen and (max-width:768px) {
     .aboutme__block{
@@ -101,5 +106,8 @@
         line-height: 18px;
         max-width: 364px;
         margin-bottom: 87px;
+    }
+    .aboutme__info-block{
+        flex-wrap: wrap-reverse;
     }
 }

@@ -51,3 +51,9 @@
     color: rgba(66, 133, 244, 1);
     text-decoration: none;
 }
+@media screen and (max-width: 768px) {
+    .notfound__block{
+        margin: 408px auto 0;
+        padding: 0 0 222px;
+    }
+}
