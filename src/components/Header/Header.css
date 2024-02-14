@@ -186,4 +186,11 @@
     max-height:26px;
     margin-left: 14px;
   }
+  .header__button-open{
+    position: relative;
+    bottom: 3px;
+    background-image: url('../../images/icon__COLOR_icon-main320.svg');
+    width: 40px;
+    height: 43px;
+  }
 }

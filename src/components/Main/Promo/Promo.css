@@ -101,7 +101,7 @@
         margin: 75px auto 0;
     }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 370px) {
     .promo__block{
         padding: 70px 10px 30px;
     }
@@ -120,5 +120,8 @@
     }
     .promo__button-block{
         margin-top: 67px;
+    }
+    .promo__block-info{
+        align-items: center;
     }
 }

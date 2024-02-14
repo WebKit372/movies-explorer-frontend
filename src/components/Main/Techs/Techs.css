@@ -54,6 +54,7 @@
     margin: 0 auto 0;
     padding: 0;
     display: grid;
+    justify-content: center;
     grid-template-columns: repeat(auto-fit, 84px);
     grid-template-rows: repeat(auto-fit, 57px);
     list-style-type: none;

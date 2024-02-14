@@ -110,4 +110,44 @@
   .search-form__checkbox-block{
     padding-bottom: 49px;
   }
+  .search-form__movie{
+    max-width: 50%;
+  }
+ }
+ @media screen and (max-width: 320px){
+  .search-form{
+    padding: 70px 14px 10px;
+  }
+  .search-form__checkbox-block{
+    padding-bottom: 49px;
+  }
+  .search-form__button{
+    min-height: auto;
+    min-width: auto;
+    max-width: 80px;
+    min-height: 44px;
+    width: 100%;
+    flex-grow: 2;
+    box-sizing: border-box;
+    padding: 0;
+  }
+  .search-form__movie{
+    padding: 10px 2px;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: 0px;
+    max-width: 160px;
+  }
+  .search-form__bar{
+    padding:6px;
+  }
+  .search-form__checkbox-block{
+    margin-top: 30px;
+  }
+  .search-form__checkbox-text{
+    font-family: Inter;
+    font-size: 11px;
+    line-height: 18px;
+    letter-spacing: 0em;
+  }
  }
