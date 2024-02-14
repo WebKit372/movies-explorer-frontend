@@ -116,7 +116,7 @@
  }
  @media screen and (max-width: 320px){
   .search-form{
-    padding: 70px 14px 10px;
+    padding: 64px 14px 10px;
   }
   .search-form__checkbox-block{
     padding-bottom: 49px;
@@ -143,6 +143,7 @@
   }
   .search-form__checkbox-block{
     margin-top: 30px;
+    padding-bottom: 60px;
   }
   .search-form__checkbox-text{
     font-family: Inter;

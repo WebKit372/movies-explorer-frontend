@@ -121,3 +121,23 @@
         margin-bottom: 210px;
     }
 }
+@media screen and (max-width: 768px) {
+    .profile__block{
+        margin: 65px auto 0;
+        padding: 0 30px 40px;
+    }
+    .profile__title{
+        margin: 0 auto 80px;
+    }
+    .profile__form-block_name{
+        margin-bottom: 19px;
+    }
+    .profile__form-block_email{
+        margin-bottom: 379px;
+    }
+    .profile__button{
+        font-size: 12px;
+        line-height: 15px;
+        letter-spacing: 0px;
+    }
+}

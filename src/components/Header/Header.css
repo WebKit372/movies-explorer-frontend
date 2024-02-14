@@ -193,4 +193,7 @@
     width: 40px;
     height: 43px;
   }
+  .header__menu-block{
+    width: 100%;
+  }
 }
