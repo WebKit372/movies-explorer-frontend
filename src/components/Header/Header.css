@@ -141,9 +141,17 @@
     text-align: center;
   }
   .header__links_active{
-    padding-bottom: 4px;
+    position: relative;
     margin: auto;
     font-weight: 400;
+  }
+  .header__links_active::after{
+    content: "";
+    width: 100%;
+    top: calc(100% + 5px);
+    left: 0px;
+    z-index: 2;
+    position: absolute;
     border-bottom: solid 2px white;
   }
   .header__button-close{
@@ -175,9 +183,10 @@
     padding: 18px 14px;
   }
   .header__links{
-    font-family: Inter;
-    font-size: 10px;
-    line-height: 16px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 0px;
   }
   .header__login-block{
     position: relative;
@@ -195,5 +204,28 @@
   }
   .header__menu-block{
     width: 100%;
+    justify-content: flex-start;
+    padding-bottom: 50px; 
+  }
+  .header__button-close{
+    position:unset;
+    margin: 0 0;
+    padding: 14px;
+    margin: 13px 14px 0;
+  }
+  .header__menu-links{
+    padding-top: 104px;
+    gap: 24px;
+  }
+  .header__links_active{
+    position: relative;
+  }
+  .header__account-block{
+    margin-top: 100%
+  }
+  .header__links_acc{
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0px;
   }
 }

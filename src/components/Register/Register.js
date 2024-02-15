@@ -21,7 +21,7 @@ export default function Register() {
                     </div>
                     <div className='register__form-block register__form-block_password'>
                         <label className='register__label'>Пароль</label>
-                        <input type="password" className='register__input' placeholder='Виталий'/>
+                        <input type="password" className='register__input'/>
                         <label className='register__error register__error__disabled'>Что-то пошло не так...</label>
                     </div>
                     <button type='button' className='register__button'>Зарегистрироваться</button>

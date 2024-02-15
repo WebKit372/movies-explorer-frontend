@@ -16,7 +16,7 @@ export default function Login() {
                     </div>
                     <div className='login__form-block login__form-block_password'>
                         <label className='login__label'>Пароль</label>
-                        <input type="password" className='login__input' placeholder='Виталий'/>
+                        <input type="password" className='login__input' placeholder=''/>
                         <label className='login__error login__error__disabled'>Что-то пошло не так...</label>
                     </div>
                     <button type='button' className='login__button'>Войти</button>

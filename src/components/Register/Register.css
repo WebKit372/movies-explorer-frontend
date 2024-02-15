@@ -132,3 +132,29 @@
         margin: 232px auto 232px;
     }
 }
+@media screen and (max-width: 320px) {
+    .register__block{
+        margin: 56px auto 30px;
+        padding: 0 30px;
+    }
+    .register__logo{
+        margin: 0 auto 50px; 
+    }
+    .register__title{
+        margin: 0 auto 80px;       
+    }
+    .register__button{
+        margin-top: 157px;
+        font-size: 12px;
+        line-height: 15px;
+        letter-spacing: 0em;
+    }
+    .register__form-block_password{
+        margin-bottom: 83px;
+    }
+    .register__text{
+        font-size: 12px;
+        line-height: 15px;
+        letter-spacing: 0em;        
+    }
+}

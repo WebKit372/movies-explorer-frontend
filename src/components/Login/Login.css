@@ -132,3 +132,29 @@
         margin: 232px auto;
    } 
 }
+@media screen and (max-width: 320px) {
+    .login__block{
+        margin: 56px auto 30px;
+        padding: 0 30px;
+    }
+    .login__logo{
+        margin: 0 auto 50px; 
+    }
+    .login__title{
+        margin: 0 auto 80px;       
+    }
+    .login__button{
+        margin-top: 267px;
+        font-size: 12px;
+        line-height: 15px;
+        letter-spacing: 0em;
+    }
+    .login__form-block_password{
+        margin-bottom: 42px;
+    }
+    .login__text{
+        font-size: 12px;
+        line-height: 15px;
+        letter-spacing: 0em;        
+    }
+}

@@ -45,7 +45,7 @@ export default function Header (props) {
                             <NavLink to="/saved-movies" className={({isActive}) => `header__links ${isActive? "header__links_active" : ""}`}>Сохранённые фильмы</NavLink>                          
                         </div>
                         <div className='header__account-block'>
-                            <NavLink to="/profile" className={({isActive}) => `header__links ${isActive? "header__links_active" : ""}`}>Аккаунт</NavLink>
+                            <NavLink to="/profile" className={({isActive}) => `header__links header__links_acc ${isActive? "header__links_active" : ""}`}>Аккаунт</NavLink>
                                 <div style={{backgroundColor: `${props.location.pathname === '/profile' ? 'rgba(49, 49, 49, 1)': ''}`}} className="header__icon-block">
                                     <img 
                                     src={icon}
