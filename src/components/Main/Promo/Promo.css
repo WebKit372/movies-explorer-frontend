@@ -68,7 +68,7 @@
     background-color: rgba(7, 48, 66, .8);
     border: solid 1px  rgba(255, 255, 255, .8);
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 860px) {
     .promo__info{
         display: flex;
         flex-direction: column-reverse;
@@ -76,12 +76,11 @@
     .promo__image{
         max-width: 310px;
         max-height: 304px;
-        margin-bottom: 48px;
+        margin-bottom: 46px;
         align-self: center;
     }
     .promo__title{
-        position: relative;
-        left: 12px;
+        align-self: center;
         text-align: center;
         max-width: 680px;
         width: 100%;
@@ -111,8 +110,6 @@
         margin-bottom: 41px;
     }
     .promo__title{
-        position: static;
-        font-family: Inter;
         font-size: 30px;
         line-height: 38px;
         max-width: 300px;

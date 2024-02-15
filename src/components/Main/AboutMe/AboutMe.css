@@ -111,7 +111,12 @@
         flex-wrap: wrap-reverse;
     }
 }
-@media screen and (max-width:768px) {
+@media screen and (max-width:740px) {
+    .aboutme__info-block{
+        justify-content: center;
+    }
+}
+@media screen and (max-width:320px) {
     .aboutme__block{
         padding: 70px 14px 0; 
     }

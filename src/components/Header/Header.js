@@ -21,7 +21,7 @@ export default function Header (props) {
                 {props.authorized?
                 <>
                     <div className="header__info-block">
-                        <div className="header_films-block">
+                        <div className="header__films-block">
                             <NavLink to="/movies" className={({isActive}) => `header__links ${isActive? "header__links_active" : ""}`}>Фильмы</NavLink>
                             <NavLink to="/saved-movies" className={({isActive}) => `header__links ${isActive? "header__links_active" : ""}`}>Сохранённые Фильмы</NavLink>
                         </div>

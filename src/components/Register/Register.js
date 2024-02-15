@@ -7,7 +7,9 @@ export default function Register() {
         <div className='register'>
             <div className='register__block'>
                 <form className='register__form'>
-                <img className='register__logo' src={logo} alt='Логотип'/>
+                <NavLink className='register__logo' to='/'>
+                    <img className='register__logo' src={logo} alt='Логотип'/>
+                </NavLink>
                 <h2 className='register__title'>Добро пожаловать!</h2>
                     <div className='register__form-block register__form-block_name'>
                         <label className='register__label'>Имя</label>

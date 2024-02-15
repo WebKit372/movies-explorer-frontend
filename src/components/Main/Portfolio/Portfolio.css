@@ -65,7 +65,7 @@
         right: 0.5px;
     }
 }
-@media screen and (max-width:320px) {
+@media screen and (max-width:360px) {
     .portfolio__block{
         padding: 70px  14px 70px;
     }

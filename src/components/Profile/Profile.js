@@ -1,5 +1,6 @@
 import React from 'react'
 import './Profile.css'
+import { NavLink } from 'react-router-dom'
 export default function Profile() {
     const [disabled, Setdisabled] = React.useState(true)
     return(
@@ -18,7 +19,7 @@ export default function Profile() {
                     {disabled ?                     
                     <div className='profile__buttons-block'>
                         <button type='button' onClick={()=>Setdisabled(false)} className='profile__button profile__button_edit'>Редактировать</button>
-                        <button className='profile__button profile__button_exit'>Выйти из аккаунта</button>
+                        <NavLink to='/signin' className='profile__button profile__button_exit'>Выйти из аккаунта</NavLink>
                     </div> :
                     <button type='button' onClick={()=>Setdisabled(true)} className='profile__button profile__button_save'>Сохранить</button>
                     }

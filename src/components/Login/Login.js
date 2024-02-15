@@ -7,7 +7,9 @@ export default function Login() {
         <div className='login'>
             <div className='login__block'>
                 <form className='login__form'>
-                <img className='login__logo' src={logo} alt='Логотип'/>
+                <NavLink className='login__logo' to='/'>
+                    <img className='login__logo' src={logo} alt='Логотип'/>
+                </NavLink>
                 <h2 className='login__title'>Рады видеть!</h2>
                     <div className='login__form-block login__form-block_email'>
                         <label type="email" className='login__label'>E-mail</label>

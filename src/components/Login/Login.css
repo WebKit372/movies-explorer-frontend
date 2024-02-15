@@ -79,7 +79,7 @@
     padding: 0;
     align-self: center;
     border: none;
-    background-color: rgba(52, 86, 243, 1);
+    background-color: rgba(66, 133, 244, 1);
     cursor: pointer;
     color: white;
     width: 100%;
@@ -89,7 +89,7 @@
     transition: background-color .2s;
 }
 .login__button:hover{
-    background-color: rgba(52, 86, 243, .8);
+    background-color: rgba(66, 133, 244, .8);
 }
 .login__error{
     top: calc(100% + 6px);
@@ -112,6 +112,7 @@
     line-height: 17px;
     letter-spacing: 0em;
     color: rgba(139, 139, 139, 1);
+    text-align: center;
 }
 .login__link{
     color: rgba(66, 133, 244, 1);
@@ -126,9 +127,14 @@
     max-width: 38px;
     max-height: 38px;
     margin: 0 0 40px;
+    transition: opacity .2s;
+}
+.login__logo:hover{
+    opacity: .7;
 }
 @media screen and (max-width: 768px) {
    .login__block{
+        padding: 0 30px;
         margin: 232px auto;
    } 
 }

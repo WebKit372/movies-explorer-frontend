@@ -5,18 +5,18 @@ export default function Portfolio(){
             <div className='portfolio__block'>
                 <h3 className="portfolio__title">Портфолио</h3>
                 <ul className="portfolio__list">
-                    <div className="portfolio__element">
+                    <li className="portfolio__element">
                         <a href='https://github.com/WebKit372/how-to-learn' rel='noreferrer' target="_blank" className='portfolio__name'>Статичный сайт</a>
                         <p className='portfolio__name portfolio__name_arrow'>↗</p>
-                    </div>
-                    <div className="portfolio__element">
+                    </li>
+                    <li className="portfolio__element">
                         <a href='https://github.com/WebKit372/russian-travel' rel='noreferrer' target="_blank" className='portfolio__name'>Адаптивный сайт</a>
                         <p className='portfolio__name portfolio__name_arrow'>↗</p>
-                    </div>
-                    <div className="portfolio__element">
+                    </li>
+                    <li className="portfolio__element">
                         <a href='https://github.com/WebKit372/react-mesto-api-full-gha' rel='noreferrer' target="_blank" className='portfolio__name'>Одностраничное приложение</a>
                         <p className='portfolio__name portfolio__name_arrow'>↗</p>
-                    </div>
+                    </li>
                 </ul>
             </div>
         </div>

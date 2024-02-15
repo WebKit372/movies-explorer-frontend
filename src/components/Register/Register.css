@@ -79,7 +79,7 @@
     padding: 0;
     align-self: center;
     border: none;
-    background-color: rgba(52, 86, 243, 1);
+    background-color:rgba(66, 133, 244, 1);
     cursor: pointer;
     color: white;
     width: 100%;
@@ -89,7 +89,7 @@
     transition: background-color .2s;
 }
 .register__button:hover{
-    background-color: rgba(52, 86, 243, .8);
+    background-color: rgba(66, 133, 244, .8);
 }
 .register__error{
     top: calc(100% + 6px);
@@ -126,9 +126,14 @@
     max-width: 38px;
     max-height: 38px;
     margin: 0 0 40px;
+    transition: opacity .2s;
+}
+.register__logo:hover{
+    opacity: .7;
 }
 @media screen and (max-width: 768px) {
     .register__block{
+        padding: 0 30px;
         margin: 232px auto 232px;
     }
 }
