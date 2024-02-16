@@ -10,10 +10,10 @@ export default function Login() {
                 <NavLink className='login__logo' to='/'>
                     <img className='login__logo' src={logo} alt='Логотип'/>
                 </NavLink>
-                <h2 className='login__title'>Рады видеть!</h2>
+                <h1 className='login__title'>Рады видеть!</h1>
                     <div className='login__form-block login__form-block_email'>
-                        <label type="email" className='login__label'>E-mail</label>
-                        <input className='login__input' placeholder='Виталий'/>
+                        <label className='login__label'>E-mail</label>
+                        <input type='email' className='login__input' placeholder='Виталий'/>
                         <label className='login__error login__error__disabled'>Что-то пошло не так...</label>
                     </div>
                     <div className='login__form-block login__form-block_password'>
@@ -21,7 +21,7 @@ export default function Login() {
                         <input type="password" className='login__input' placeholder=''/>
                         <label className='login__error login__error__disabled'>Что-то пошло не так...</label>
                     </div>
-                    <button type='button' className='login__button'>Войти</button>
+                    <button type='submit' className='login__button'>Войти</button>
                     <p className='login__text'>Ещё не зарегистрированы?<NavLink className='login__link' to='/signup'>Регистрация</NavLink></p>
                 </form> 
             </div>

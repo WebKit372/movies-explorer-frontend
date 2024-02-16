@@ -1,11 +1,11 @@
 import './Techs.css'
 export default function Techs(){
     return(
-        <div className="techs">
+        <section className="techs">
             <div className='techs__block'>
-                <p className="techs__name">Технологии</p>
+                <h2 className="techs__name">Технологии</h2>
                 <div className="techs__info-block">
-                    <h2 className='techs__title'>7 технологий</h2>
+                    <h3 className='techs__title'>7 технологий</h3>
                     <p className='techs__subscription'>На курсе веб-разработки мы освоили технологии, которые применили в дипломном проекте.</p>
                 </div>  
                 <ul className='techs__list'>
@@ -18,6 +18,6 @@ export default function Techs(){
                     <li className='techs__list-element'>mongoDB</li>
                 </ul>
             </div>
-        </div>
+        </section>
     )
 }

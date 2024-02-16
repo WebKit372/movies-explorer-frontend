@@ -6,7 +6,7 @@ export default function Profile() {
     return(
         <div className='profile'>
             <div className='profile__block'>
-                <h2 className='profile__title'>Привет, Виталий!</h2>
+                <h1 className='profile__title'>Привет, Виталий!</h1>
                 <form className='profile__form'>
                     <div className='profile__form-block profile__form-block_name'>
                         <label className='profile__label'>Имя</label>
@@ -21,7 +21,7 @@ export default function Profile() {
                         <button type='button' onClick={()=>Setdisabled(false)} className='profile__button profile__button_edit'>Редактировать</button>
                         <NavLink to='/signin' className='profile__button profile__button_exit'>Выйти из аккаунта</NavLink>
                     </div> :
-                    <button type='button' onClick={()=>Setdisabled(true)} className='profile__button profile__button_save'>Сохранить</button>
+                    <button type='submit' onClick={()=>Setdisabled(true)} className='profile__button profile__button_save'>Сохранить</button>
                     }
                 </form> 
             </div>

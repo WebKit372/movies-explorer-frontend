@@ -9,7 +9,7 @@ export default function NotFound(){
                 <div className='notfound__info-block'>
                     <h2 className="notfound__title">404</h2>
                     <p className="notfound__text">Страница не найдена</p>
-                    <button onClick={() => navigate(-1)} className="notfound__link">Назад</button>
+                    <button type='button' onClick={() => navigate(-1)} className="notfound__link">Назад</button>
                 </div>
             </div>
         </div>

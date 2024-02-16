@@ -6,6 +6,8 @@
     padding: 70px 70px 86px;
 }
 .moviescardlist__cards{
+    padding: 0;
+    list-style-type: none;
     margin: auto;
     max-width: 89.0625%;
     display: grid;

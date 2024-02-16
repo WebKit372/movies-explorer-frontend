@@ -35,10 +35,10 @@ export default function Header (props) {
                             </div>
                         </div>
                     </div>
-                    <button className='header__button-open' onClick={changeVisible}/>
+                    <button  type='button' className='header__button-open' onClick={changeVisible}/>
                 <div className={`header__menu ${visible? 'header__menu_active' : ''}`}>
                     <div className={`header__menu-block ${visible? 'header__menu-block_active' : ''}`}>
-                        <button className='header__button-close' onClick={changeVisible}/>
+                        <button type='button' className='header__button-close' onClick={changeVisible}/>
                         <div className='header__menu-links'>
                             <NavLink to="/" className={({isActive}) => `header__links ${isActive? "header__links_active" : ""}`}>Главная</NavLink>
                             <NavLink to="/movies" className={({isActive}) => `header__links ${isActive? "header__links_active" : ""}`}>Фильмы</NavLink>

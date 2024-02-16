@@ -3,12 +3,12 @@ import MoviesCard from '../MoviesCard/MoviesCard'
 import Preloader from '../Preloader/Preloader'
 export default function MoviesCardList(props){
     return (
-        <main className='moviescardlist'>
+        <section className='moviescardlist'>
             {props.loaded?
                 <Preloader/>:
                 ''
             }
-            <div className='moviescardlist__cards'>
+            <ul className='moviescardlist__cards'>
                 <MoviesCard type={props.type} image={props.image} name='В погоне за Бенкси' duration='0ч 42м'/>
                 <MoviesCard type={props.type} image={props.image} name='В погоне за Бенкси' duration='0ч 42м'/>
                 <MoviesCard type={props.type} image={props.image} name='В погоне за Бенкси' duration='0ч 42м'/>
@@ -17,11 +17,11 @@ export default function MoviesCardList(props){
                 <MoviesCard type={props.type} image={props.image} name='В погоне за Бенкси' duration='12'/>
                 <MoviesCard type={props.type} image={props.image} name='В погоне за Бенкси' duration='12'/>
                 <MoviesCard type={props.type} image={props.image} name='В погоне за Бенкси' duration='12'/>
-            </div>
+            </ul>
             {props.isOverFilled?
-                <button className='moviescardlist__button'>Ещё</button> :
+                <button type='button' className='moviescardlist__button'>Ещё</button> :
                 <></>
             }
-        </main>
+        </section>
     )
 }

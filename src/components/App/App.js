@@ -10,13 +10,18 @@ import Profile from '../Profile/Profile';
 import Register from '../Register/Register';
 import Login from '../Login/Login';
 import NotFound from '../NotFound/NotFound';
+import { Helmet } from "react-helmet";
+
 function App() {
   const location = useLocation();
+  const [lang, setLang] = React.useState('ru')
   const [isOverFilled, setIsOverFilled] = React.useState(true);
   const isShowFooter = location.pathname ==='/movies' || location.pathname ==='/saved-movies' || location.pathname ==='/';
   const isShowHeader = location.pathname ==='/movies' || location.pathname ==='/saved-movies' || location.pathname ==='/profile' || location.pathname ==='/';
   return (
+    
     <div className='page'>
+    <Helmet htmlAttributes={{ lang }}/>
     { isShowHeader?
     <Header authorized={true} location={location} />:
     ""

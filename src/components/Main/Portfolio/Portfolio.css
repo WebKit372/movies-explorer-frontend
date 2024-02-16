@@ -19,6 +19,7 @@
     margin-bottom: 51px;
 }
 .portfolio__list{
+    list-style-type: none;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -26,9 +27,6 @@
     padding: 0;
 }
 .portfolio__element{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     border-bottom: solid 1px #424242;
     padding-bottom: 20px;
 }
@@ -37,6 +35,7 @@
     padding-bottom: 0;
 }
 .portfolio__name{
+    display: flex;
     margin: 0;
     font-family: Inter, Arial, sans-serif;
     font-size: 30px;
@@ -49,12 +48,17 @@
 .portfolio__name:hover:not(.portfolio__name_arrow){
     opacity: .7;  
 }
+.portfolio__name_arrow{
+    margin-left: auto;
+}
+
 @media screen and (max-width:768px) {
     .portfolio__block{
         padding: 91px  50px 90px;
     } 
     .portfolio__name{
         font-size: 28px;
+        display: flex;
     }
     .portfolio__element{
         padding-bottom: 18px;

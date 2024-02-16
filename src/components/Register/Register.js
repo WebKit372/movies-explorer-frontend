@@ -10,15 +10,15 @@ export default function Register() {
                 <NavLink className='register__logo' to='/'>
                     <img className='register__logo' src={logo} alt='Логотип'/>
                 </NavLink>
-                <h2 className='register__title'>Добро пожаловать!</h2>
+                <h1 className='register__title'>Добро пожаловать!</h1>
                     <div className='register__form-block register__form-block_name'>
                         <label className='register__label'>Имя</label>
                         <input className='register__input' placeholder='Виталий'/>
                         <label className='register__error register__error__disabled'>Что-то пошло не так...</label>
                     </div>
                     <div className='register__form-block register__form-block_email'>
-                        <label type="email" className='register__label'>E-mail</label>
-                        <input className='register__input' placeholder='Виталий'/>
+                        <label  className='register__label'>E-mail</label>
+                        <input type="email" className='register__input' placeholder='Виталий'/>
                         <label className='register__error register__error__disabled'>Что-то пошло не так...</label>
                     </div>
                     <div className='register__form-block register__form-block_password'>
@@ -26,7 +26,7 @@ export default function Register() {
                         <input type="password" className='register__input'/>
                         <label className='register__error register__error__disabled'>Что-то пошло не так...</label>
                     </div>
-                    <button type='button' className='register__button'>Зарегистрироваться</button>
+                    <button type='submit' className='register__button'>Зарегистрироваться</button>
                     <p className='register__text'>Уже зарегистрированы?<NavLink className='register__link' to='/signin'>Войти</NavLink></p>
                 </form> 
             </div>
