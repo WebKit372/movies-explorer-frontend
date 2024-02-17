@@ -13,7 +13,7 @@ export default function Header (props) {
         setVisible(true);
     }
  return (
-    <div className='header' style={{backgroundColor: `${props.location.pathname === '/profile' || props.location.pathname === '/movies' || props.location.pathname === '/saved-movies' ? 'rgba(32, 32, 32, 1)': ''}`}}>
+    <header className='header' style={{backgroundColor: `${props.location.pathname === '/profile' || props.location.pathname === '/movies' || props.location.pathname === '/saved-movies' ? 'rgba(32, 32, 32, 1)': ''}`}}>
         <div className="header__block">
             <NavLink to="/">
                 <img src={logo} className='header__logo' alt='Логотип'/>
@@ -65,6 +65,6 @@ export default function Header (props) {
                     </div>    
                 }    
         </div>
-    </div>
+    </header>
  )
 }

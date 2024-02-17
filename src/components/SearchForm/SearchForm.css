@@ -12,6 +12,9 @@
     border-radius: 8px;
     padding: 10px;
  }
+ .search-form__bar:focus-within{
+  border: solid 1.5px rgba(203, 169, 12, 1);
+ }
  .search-form__movie{
     padding: 15px;
     flex-grow: 1;

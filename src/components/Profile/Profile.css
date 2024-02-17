@@ -5,7 +5,7 @@
 }
 .profile__block{
     max-width: 1280px;
-    margin: 74px auto 70px;
+    margin: 70px auto 70px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -114,7 +114,7 @@
 @media screen and (max-width: 768px) {
     .profile__block{
         margin: 230px auto 0;
-        padding-bottom: 269px;
+        padding: 0 30px 269px;
     }
     .profile__title{
         margin: 0 auto 96px;

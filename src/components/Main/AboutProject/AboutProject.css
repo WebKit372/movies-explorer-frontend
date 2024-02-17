@@ -104,6 +104,7 @@
     }
     .about-project__timebar{
         margin-top: 93px;
+        grid-template-columns: 1fr 3.77fr;
     }
 }
 @media screen and (max-width: 380px) {

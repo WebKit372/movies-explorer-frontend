@@ -4,13 +4,13 @@ import { NavLink } from 'react-router-dom'
 export default function Profile() {
     const [disabled, Setdisabled] = React.useState(true)
     return(
-        <div className='profile'>
-            <div className='profile__block'>
+        <main className='profile'>
+            <section className='profile__block'>
                 <h1 className='profile__title'>Привет, Виталий!</h1>
                 <form className='profile__form'>
                     <div className='profile__form-block profile__form-block_name'>
                         <label className='profile__label'>Имя</label>
-                        <input disabled={disabled} className='profile__input' placeholder='Виталий'/>
+                        <input disabled={disabled} className='profile__input' minLength={2} maxLength={30}  placeholder='Виталий'/>
                     </div>
                     <div className='profile__form-block profile__form-block_email'>
                         <label className='profile__label'>E-mail</label>
@@ -24,7 +24,7 @@ export default function Profile() {
                     <button type='submit' onClick={()=>Setdisabled(true)} className='profile__button profile__button_save'>Сохранить</button>
                     }
                 </form> 
-            </div>
-        </div>
+            </section>
+        </main>
     )
 }

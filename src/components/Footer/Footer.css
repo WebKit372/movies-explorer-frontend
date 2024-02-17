@@ -51,6 +51,9 @@
     .footer__block{
         padding: 79px 30px 20px;
     }
+    .footer__info{
+        margin-top: 22px;
+    }
 }
 @media screen and (max-width: 320px){
     .footer__block{
