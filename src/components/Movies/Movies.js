@@ -5,8 +5,8 @@ import ok from '../../images/icon__COLOR_invisible.svg'
 export default function Movies(props){
     return (
         <main className='movies'>
-            <SearchForm/>
-            <MoviesCardList type='find' isOverFilled={props.isOverFilled} image={ok}/>
+            <SearchForm getFilms={props.getFilms}/>
+            <MoviesCardList type='find' isOverFilled={props.isOverFilled} films={props.films} image={ok}/>
         </main>
     )
 }

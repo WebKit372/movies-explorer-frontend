@@ -8,19 +8,19 @@ export default function MoviesCardList(props){
                 <Preloader/>:
                 ''
             }
-            <ul className='moviescardlist__cards'>
-                <MoviesCard type={props.type} image={props.image} name='В погоне за Бенкси' duration='0ч 42м'/>
-                <MoviesCard type={props.type} image={props.image} name='В погоне за Бенкси' duration='0ч 42м'/>
-                <MoviesCard type={props.type} image={props.image} name='В погоне за Бенкси' duration='0ч 42м'/>
-                <MoviesCard type={props.type} image={props.image} name='В погоне за Бенкси' duration='12'/>
-                <MoviesCard type={props.type} image={props.image} name='В погоне за Бенкси' duration='12'/>
-                <MoviesCard type={props.type} image={props.image} name='В погоне за Бенкси' duration='12'/>
-                <MoviesCard type={props.type} image={props.image} name='В погоне за Бенкси' duration='12'/>
-                <MoviesCard type={props.type} image={props.image} name='В погоне за Бенкси' duration='12'/>
+            {props.films.lenght !== 0?
+            <>
+                <ul className='moviescardlist__cards'>
+                {props.films.map((film, i) => (
+                <MoviesCard type={props.type} image={props.image} name='В погоне за Бенкси' duration='0ч 42м'/>   
+                )                
+                )}
             </ul>
-            {props.isOverFilled?
-                <button type='button' className='moviescardlist__button'>Ещё</button> :
-                <></>
+                {props.isOverFilled?
+                    <button type='button' className='moviescardlist__button'>Ещё</button> :
+                    <></>
+                }
+            </> :<></>
             }
         </section>
     )

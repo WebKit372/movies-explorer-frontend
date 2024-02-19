@@ -10,12 +10,18 @@ import Profile from '../Profile/Profile';
 import Register from '../Register/Register';
 import Login from '../Login/Login';
 import NotFound from '../NotFound/NotFound';
+import apiTool from '../../utils/Api';
 import { Helmet } from "react-helmet";
 
 function App() {
+  const [films,setFilms] = React.useState([])
+  function getFilms(){
+    apiTool.getFilms()
+    .then(res => console.log(res))
+  }
   const location = useLocation();
   const [lang, setLang] = React.useState('ru')
-  const [isOverFilled, setIsOverFilled] = React.useState(true);
+  const [isOverFilled, setIsOverFilled] = React.useState(false);
   const isShowFooter = location.pathname ==='/movies' || location.pathname ==='/saved-movies' || location.pathname ==='/';
   const isShowHeader = location.pathname ==='/movies' || location.pathname ==='/saved-movies' || location.pathname ==='/profile' || location.pathname ==='/';
   return (
@@ -29,8 +35,8 @@ function App() {
     
     <Routes>
       <Route path='/' element={ <Main/> }/>
-      <Route path='/movies' element={ <Movies isOverFilled={isOverFilled}/> }/>
-      <Route path='/saved-movies' element={ <SavedMovies isOverFilled={isOverFilled}/> }/>
+      <Route path='/movies' element={ <Movies isOverFilled={isOverFilled} films={films} getFilms={getFilms}/> }/>
+      <Route path='/saved-movies' element={ <SavedMovies isOverFilled={isOverFilled} films={films} getFilms={getFilms}/> }/>
       <Route path='/profile' element={ <Profile/> }/>
       <Route path='signup' element={ <Register/>}/>
       <Route path='signin' element={ <Login/> }/>
