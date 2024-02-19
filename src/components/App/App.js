@@ -11,13 +11,15 @@ import Register from '../Register/Register';
 import Login from '../Login/Login';
 import NotFound from '../NotFound/NotFound';
 import apiTool from '../../utils/Api';
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider  } from "react-helmet-async";
 
 function App() {
   const [films,setFilms] = React.useState([])
   function getFilms(){
     apiTool.getFilms()
-    .then(res => console.log(res))
+    .then(res => {
+      return setFilms(res)
+    })
   }
   const location = useLocation();
   const [lang, setLang] = React.useState('ru')
@@ -27,7 +29,9 @@ function App() {
   return (
     
     <div className='page'>
-    <Helmet htmlAttributes={{ lang }}/>
+    <HelmetProvider>
+      <Helmet htmlAttributes={{ lang }}/>     
+    </HelmetProvider>
     { isShowHeader?
     <Header authorized={true} location={location} />:
     ""

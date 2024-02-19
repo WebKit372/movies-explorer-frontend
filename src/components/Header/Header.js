@@ -6,7 +6,6 @@ import logo from '../../images/logo.svg';
 export default function Header (props) {
     const [visible, setVisible] = React.useState(false);
     function changeVisible(){
-        console.log(props.location.pathname)
         if(visible){
             return setVisible(false);
         }
