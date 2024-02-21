@@ -14,11 +14,33 @@ import apiTool from '../../utils/Api';
 import { Helmet, HelmetProvider  } from "react-helmet-async";
 
 function App() {
+  const [searchFormName, setSearchFormName] = React.useState('')
   const [films,setFilms] = React.useState([])
-  function getFilms(){
+  const [preloaderDisplay, setPreloaderDisplay] = React.useState(false)
+  function changePreloaderDisplay(){
+    setPreloaderDisplay(true)
+  }
+  function handleChange(e){
+    setSearchFormName(e.target.value)
+  }
+  function getFilms(word){
     apiTool.getFilms()
     .then(res => {
-      return setFilms(res)
+      setFilms([])
+      setFilms(res.filter((film) => {
+        if(!film){
+          return false
+        }
+        setPreloaderDisplay(false)
+        return (Object.entries(film).some((val)=>{
+          const key = val[0]
+          const value = val[1]
+          if((key !== 'director' && key !== 'country' && key !== 'nameEN' && key !== 'nameRU') || typeof value !== 'string'){
+            return false;
+          }
+          return value.toLowerCase().includes(word.toLowerCase())
+        }))
+      }))
     })
   }
   const location = useLocation();
@@ -39,8 +61,24 @@ function App() {
     
     <Routes>
       <Route path='/' element={ <Main/> }/>
-      <Route path='/movies' element={ <Movies isOverFilled={isOverFilled} films={films} getFilms={getFilms}/> }/>
-      <Route path='/saved-movies' element={ <SavedMovies isOverFilled={isOverFilled} films={films} getFilms={getFilms}/> }/>
+      <Route path='/movies' element={ 
+        <Movies
+        isOverFilled={isOverFilled}
+        films={films} getFilms={getFilms}
+        handleChange={handleChange}
+        searchFormName={searchFormName}
+        changePreloaderDisplay={changePreloaderDisplay}
+        preloaderDisplay={preloaderDisplay}
+        />
+      }/>
+      <Route path='/saved-movies' element={ 
+        <SavedMovies
+        isOverFilled={isOverFilled}
+        films={films} getFilms={getFilms}
+        changePreloaderDisplay={changePreloaderDisplay}
+        preloaderDisplay={preloaderDisplay}
+        />
+      }/>
       <Route path='/profile' element={ <Profile/> }/>
       <Route path='signup' element={ <Register/>}/>
       <Route path='signin' element={ <Login/> }/>

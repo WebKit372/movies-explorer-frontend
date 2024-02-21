@@ -6,7 +6,13 @@ export default function SavedMovies(props){
     return (
         <main className='saved-movies'>
             <SearchForm/>
-            <MoviesCardList type='save' films={props.films} isOverFilled={props.isOverFilled} image={deleteLogo}/>
+            <MoviesCardList
+                type='save'
+                films={props.films}
+                isOverFilled={props.isOverFilled}
+                image={deleteLogo}
+                preloaderDisplay={props.preloaderDisplay}
+            />
         </main>
     )
 }

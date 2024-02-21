@@ -7,23 +7,24 @@ export default function MoviesCardList(props){
     }
     return (
         <section className='moviescardlist'>
-            {props.loaded?
+            {props.preloaderDisplay?
                 <Preloader/>:
                 ''
             }
-            {props.films.lenght !== 0?
+            {props.films.length !== 0 && !props.preloaderDisplay ?
             <>
                 <ul className='moviescardlist__cards'>
-                {props.films.map((film, i) => (
-                <MoviesCard key={film.id} card={`https://api.nomoreparties.co/.${film.image.url}`} type={props.type} image={props.image} name={film.nameRU} duration={timeConverter(film.duration)}/>   
-                )                
-                )}
-            </ul>
-                {props.isOverFilled?
-                    <button type='button' className='moviescardlist__button'>Ещё</button> :
-                    <></>
+                    {props.films.map((film, i) => (
+                    <MoviesCard key={film.id} card={`https://api.nomoreparties.co/.${film.image.url}`} type={props.type} image={props.image} name={film.nameRU} duration={timeConverter(film.duration)}/>   
+                    )                
+                    )}
+                </ul>
+                {
+                    props.isOverFilled ? <button type='button' className='moviescardlist__button'>Ещё</button> : <></>
                 }
-            </> :<></>
+            </> :
+            !props.preloaderDisplay ?
+            <h2>Ничего не найдено</h2> : ''
             }
         </section>
     )

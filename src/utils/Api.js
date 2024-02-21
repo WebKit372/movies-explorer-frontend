@@ -8,7 +8,6 @@ class Api{
         }
     }
     getFilms(){
-        console.log('qweqweq')
         return fetch('https://api.nomoreparties.co/beatfilm-movies')
         .then((res) => this.__getJSON(res))
     }
