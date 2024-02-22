@@ -1,10 +1,30 @@
 import './MoviesCardList.css'
 import MoviesCard from '../MoviesCard/MoviesCard'
 import Preloader from '../Preloader/Preloader'
+import React from 'react'
 export default function MoviesCardList(props){
     function timeConverter(time){
         return `${Math.floor(time/60) !== 0 ? Math.floor(time/60):''}ч ${time-60 * Math.floor(time/60)}м`
     }
+    function debounce(call, timeoutMs){
+        let timeout;
+        return function(){
+            const context = this;
+            const args = arguments;
+            clearTimeout(timeout);
+            timeout= setTimeout(() => call.apply(context, args), timeoutMs)
+        }
+    }
+    React.useEffect(() => {
+        function handleWindowEvent(e){
+            console.log(e.target.innerWidth)
+        }
+        const handleWindowEventDebounce = debounce(handleWindowEvent, 500);
+        window.addEventListener('resize',handleWindowEventDebounce);
+        return () => {
+            window.removeEventListener('resize', handleWindowEventDebounce)
+        }
+    })
     return (
         <section className='moviescardlist'>
             {props.preloaderDisplay?
@@ -24,7 +44,7 @@ export default function MoviesCardList(props){
                 }
             </> :
             !props.preloaderDisplay ?
-            <h2>Ничего не найдено</h2> : ''
+            <h2 className='moviescardlist__not-found'>Ничего не найдено</h2> : ''
             }
         </section>
     )

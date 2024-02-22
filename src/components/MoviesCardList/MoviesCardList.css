@@ -40,6 +40,16 @@
 .moviescardlist__button:hover{
     opacity: .8;
 }
+.moviescardlist__not-found{
+    margin: auto;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 58px;
+    letter-spacing: -0.04em;
+    color: white;
+    margin-bottom: 16px;
+}
 @media screen and (max-width: 768px){
     .moviescardlist{
         padding: 70px 30px 80px;

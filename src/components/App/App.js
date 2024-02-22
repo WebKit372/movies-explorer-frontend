@@ -10,7 +10,7 @@ import Profile from '../Profile/Profile';
 import Register from '../Register/Register';
 import Login from '../Login/Login';
 import NotFound from '../NotFound/NotFound';
-import apiTool from '../../utils/Api';
+import apiTool from '../../utils/MoviesApi';
 import { Helmet, HelmetProvider  } from "react-helmet-async";
 
 function App() {
@@ -42,6 +42,7 @@ function App() {
         }))
       }))
     })
+    .catch((err) => console.log(err))
   }
   const location = useLocation();
   const [lang, setLang] = React.useState('ru')
