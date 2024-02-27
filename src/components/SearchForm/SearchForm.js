@@ -14,7 +14,7 @@ export default function SearchForm(props){
             </div>
             <div className='search-form__checkbox-block'>
             <label className="search-form__checkbox-form">
-                <input type="checkbox" className="search-form__checkbox"/>
+                <input type="checkbox" onChange={props.changeCheckbox} checked={props.checkboxValue}className="search-form__checkbox"/>
                 <span className="search-form__slider"/>
             </label>
             <label className="search-form__checkbox-text">Короткометражки</label>

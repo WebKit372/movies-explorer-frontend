@@ -20,7 +20,9 @@ export default function MoviesCard(props){
                 <p className='movies-card__duration'>{props.duration}</p>
             </div>
             <div className='movies-card__image-block'>
+                <a className='movies-card__link' href={props.trailer} target='_blank' rel="noreferrer">
                 <img src={props.card} className='movies-card__image' alt='Фотография из фильма'/>
+                </a>
             </div>
             <button type='button' className={buttonClass} onClick={changeButton}>
                 {!Active && props.type === 'find' ? 'Сохранить' : 
