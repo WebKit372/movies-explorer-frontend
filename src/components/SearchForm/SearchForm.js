@@ -5,11 +5,13 @@ export default function SearchForm(props){
         e.preventDefault()
         props.changePreloaderDisplay()
         props.getFilms(props.searchFormName)
+        props.changeVisibleFilmsLength(0)
+        props.visit();
     }
     return(
         <form className="search-form" onSubmit={onSubmit}>
             <div className="search-form__bar">
-                <input className="search-form__movie" type="text" value={props.searchFormName} onChange={props.handleChange} placeholder='Фильм' required/>
+                <input className="search-form__movie" type="text" value={props.searchFormName} onChange={props.handleChange} placeholder='Фильм' required={props.type==='find'}/>
                 <button type='submit' className="search-form__button">Поиск</button>
             </div>
             <div className='search-form__checkbox-block'>

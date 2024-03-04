@@ -30,6 +30,7 @@ export default class mainApi {
       headers:{
         "Content-Type" : "application/json"
       },
+      credentials: "include",
       body: JSON.stringify({
         "email": user.email,
         "password": user.password
@@ -38,7 +39,56 @@ export default class mainApi {
     .then((res) => this.__getJSON(res))   
   }
   getSavedMovies(userId){
-    return fetch(`${this._URL}/movies/getMovies`)
+    return fetch(`${this._URL}/movies`,{
+      credentials: "include",  
+    })
+    .then((res) => this.__getJSON(res))
+  }
+  getUserInfo(){
+    return fetch(`${this._URL}/users/me`,{
+      credentials: "include",
+    })
+    .then((res) => this.__getJSON(res))
+  }
+
+  updateUserInfo(user){
+    return fetch(`${this._URL}/users/me`,{
+      method:'PATCH',
+      headers:{
+        "Content-Type" : "application/json"
+      },
+      body: JSON.stringify({
+        "email": user.email,
+        "name": user.name
+      }),
+      credentials: "include",
+    })
+    .then((res) => this.__getJSON(res))
+  }
+  logout(){
+    return fetch(`${this._URL}/users/logout`,{
+      credentials: "include",
+    })
+    .then((res) => this.__getJSON(res))
+  }
+  addMovie(movie){
+    return fetch(`${this._URL}/movies`,{
+      method:'POST',
+      headers:{
+        "Content-Type" : "application/json"
+      },
+      body: JSON.stringify({
+        ...movie
+      }),
+      credentials: "include",
+    })
+    .then((res) => this.__getJSON(res))
+  }
+  deleteMovie(id){
+    return fetch(`${this._URL}/movies/${id}`,{
+      method:'DELETE',
+      credentials: "include",
+    })
     .then((res) => this.__getJSON(res))
   }
 }

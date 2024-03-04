@@ -5,11 +5,11 @@ import { NavLink } from 'react-router-dom';
 import { AppContext } from '../AppContext';
 import validation from '../../utils/Validation';
 import * as formValidation from '../../utils/FieldsValidationForms';
-export default function Register({updateUser,onRegistrate, apiErrorMessage, apiErrorIsActive, hideErrorDisplay}) {
+export default function Register({onRegistrate, apiErrorMessage, apiErrorIsActive, hideErrorDisplay}) {
 	const currentUser = React.useContext(AppContext);
-	const [name,setName] = React.useState(currentUser.name);
-	const [email, setEmail] = React.useState(currentUser.email);
-	const [password, setPassword] = React.useState(currentUser.password);
+	const [name,setName] = React.useState('');
+	const [email, setEmail] = React.useState('');
+	const [password, setPassword] = React.useState('');
   const [nameErrorIsVisible, setNameErrorIsVisible] = React.useState(false);
   const [nameErrorMessage, setNameErrorMessage] = React.useState('');
   const [dirtyName, setDirtyName] = React.useState(false);
@@ -57,6 +57,7 @@ export default function Register({updateUser,onRegistrate, apiErrorMessage, apiE
 		setPassword(e.target.value);
 	}
   React.useEffect(()=>{
+    console.log(password, passwordForm);
     const result = checkValidation(passwordForm,password)
     if(result.result){
       setDirtyPassword(true);
@@ -84,9 +85,7 @@ export default function Register({updateUser,onRegistrate, apiErrorMessage, apiE
 
 	function createUser(e){
 		e.preventDefault();
-		updateUser({name: name,email: email, password: password});
     onRegistrate(name, email, password)
-    updateUser({name:'', email: '', password: ''})
 	}
 
 	function blurHandler(e){
@@ -127,14 +126,8 @@ export default function Register({updateUser,onRegistrate, apiErrorMessage, apiE
 
   React.useEffect(() => {
     hideErrorDisplay()
-    updateUser({name:'', email: '', password: ''})
   },[])
-
-  React.useEffect(()=>{
-    setName(currentUser.name);
-    setEmail(currentUser.email);
-    setPassword(currentUser.password);
-  }, [currentUser])
+  
 	return(
 		 <main className='register'>
 			<section className='register__block'>

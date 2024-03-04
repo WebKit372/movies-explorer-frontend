@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import validation from '../../utils/Validation';
 import * as formValidation from '../../utils/FieldsValidationForms';
 import { AppContext } from '../AppContext';
-export default function Profile({updateUser}) {
+export default function Profile({updateUser, logout}) {
   const currentUser = React.useContext(AppContext);
   const [disabled, Setdisabled] = React.useState(true)
   const [name,setName] = React.useState(currentUser.name);
@@ -114,7 +114,7 @@ React.useEffect(()=>{
                     {disabled ?                     
                     <div className='profile__buttons-block'>
                         <button type='button' onClick={()=>Setdisabled(false)} className='profile__button profile__button_edit'>Редактировать</button>
-                        <NavLink to='/signin' className='profile__button profile__button_exit'>Выйти из аккаунта</NavLink>
+                        <button type='button' onClick={logout} className='profile__button profile__button_exit'>Выйти из аккаунта</button>
                     </div> :
                     <div className='profile__button-block'>
                     <div className='profile__error-block'>

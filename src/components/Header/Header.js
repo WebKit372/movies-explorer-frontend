@@ -17,7 +17,7 @@ export default function Header (props) {
             <NavLink to="/">
                 <img src={logo} className='header__logo' alt='Логотип'/>
             </NavLink>
-                {props.authorized?
+                {props.loggedIn?
                 <>
                     <div className="header__info-block">
                         <div className="header__films-block">

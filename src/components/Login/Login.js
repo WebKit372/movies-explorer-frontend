@@ -4,7 +4,7 @@ import './Login.css'
 import { NavLink } from 'react-router-dom'
 import * as formValidation from '../../utils/FieldsValidationForms';
 import validation from '../../utils/Validation';
-export default function Login({updateUser, onLogin, apiErrorIsActive, apiErrorMessage, hideErrorDisplay}) {
+export default function Login({onLogin, apiErrorIsActive, apiErrorMessage, hideErrorDisplay}) {
 	const emailForm = formValidation.emailForm;
 	const passwordForm = formValidation.passwordForm;
   const [password, setPassword] = React.useState('');
@@ -49,7 +49,6 @@ export default function Login({updateUser, onLogin, apiErrorIsActive, apiErrorMe
 	}
   React.useEffect(() => {
     hideErrorDisplay()
-    updateUser({name:'', email: '', password: ''})
   },[])
 
   React.useEffect(()=>{
@@ -65,7 +64,6 @@ export default function Login({updateUser, onLogin, apiErrorIsActive, apiErrorMe
 
 	function login(e) {
 		e.preventDefault();
-		updateUser({email: email, password: password});
     onLogin(email,password);
 	}
   function blurHandler(e){
