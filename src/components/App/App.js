@@ -18,7 +18,7 @@ import mainApi from '../../utils/MainApi';
 
 function App() {
   const navigate = useNavigate()
-  const Api = new mainApi('http://localhost:3000');
+  const Api = new mainApi('https://api.webkitdiploma.nomoredomainsmonster.ru');
   const [apiErrorIsActive,setApiErrorIsActive] = React.useState(false);
   const [apiErrorMessage, setApiErrorMessage] = React.useState('');
   const [lang, setLang] = React.useState('ru')
