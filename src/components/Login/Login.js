@@ -25,7 +25,6 @@ export default function Login({onLogin, apiErrorIsActive, apiErrorMessage, hideE
         errorMessage += `${el}. `
       }
     })
-    console.log(errorMessage)
     return({result:result.includes(false), error:errorMessage})
   }
   //Валидация пароля

@@ -26,7 +26,6 @@ export default function Profile({updateUser, logout}) {
             errorMessage += `${el}. `
           }
         })
-        console.log(errorMessage)
         return({result:result.includes(false), error:errorMessage})
       }
     //Валидация имени

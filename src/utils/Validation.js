@@ -41,6 +41,5 @@ export default function validation(options, input){
     output.reg = false;
     output.regError = `Указан неверный формат поля`  
   };
-  console.log(output);
   return output;
 }

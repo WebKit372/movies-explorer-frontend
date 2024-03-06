@@ -18,7 +18,7 @@ import mainApi from '../../utils/MainApi';
 
 function App() {
   const navigate = useNavigate()
-  const Api = new mainApi('https://api.webkitdiploma.nomoredomainsmonster.ru');
+  const Api = new mainApi('http://localhost:3000');
   const [apiErrorIsActive,setApiErrorIsActive] = React.useState(false);
   const [apiErrorMessage, setApiErrorMessage] = React.useState('');
   const [lang, setLang] = React.useState('ru')
@@ -251,8 +251,8 @@ function App() {
   function onRegistrate (name, email, password){
     Api.signup({name, email, password})
     .then((res) => {
-      navigate('/signin',{replace: true})
-
+      navigate('/movies',{replace: true})
+      onLogin(email, password)
     })
     .catch((err) => {
       err
@@ -266,17 +266,19 @@ function App() {
   function onLogin( email, password ){
     Api.singnin({email, password})
     .then((res) => {
-      navigate('/',{replace: true})
+      navigate('/movies',{replace: true})
       localStorage.setItem('loggedIn', JSON.stringify(true))
       setLoggedIn(true)
     })
     .catch((err) => {
+      if(err){
         err
         .then((er) => {
           console.log(er)
           setApiErrorIsActive(true);
           setApiErrorMessage(er.message);
         })
+      }
     })   
   }
   function updateUser(userInfo){

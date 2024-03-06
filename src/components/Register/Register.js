@@ -33,7 +33,6 @@ export default function Register({onRegistrate, apiErrorMessage, apiErrorIsActiv
         errorMessage += `${el}. `
       }
     })
-    console.log(errorMessage)
     return({result:result.includes(false), error:errorMessage})
   }
 
@@ -57,7 +56,6 @@ export default function Register({onRegistrate, apiErrorMessage, apiErrorIsActiv
 		setPassword(e.target.value);
 	}
   React.useEffect(()=>{
-    console.log(password, passwordForm);
     const result = checkValidation(passwordForm,password)
     if(result.result){
       setDirtyPassword(true);
