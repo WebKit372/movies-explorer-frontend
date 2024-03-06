@@ -42,10 +42,15 @@ function App() {
     email: ''
   });
   const [savedMovies, setSavedMovies] = React.useState([])
+  //Стейты для профиля
+  const [formValid, setFormValid] = React.useState(false);
+  const [serverErrorIsVisible, setServerErrorIsVisible] = React.useState(false);
+  const [serverErrorMessage, setServerErrorMessage] = React.useState('');
+  const [disabled, setDisabled] = React.useState(true) 
+  const [success, setSuccess] = React.useState(false);
   const location = useLocation();
   const isShowFooter = location.pathname ==='/movies' || location.pathname ==='/saved-movies' || location.pathname ==='/';
   const isShowHeader = location.pathname ==='/movies' || location.pathname ==='/saved-movies' || location.pathname ==='/profile' || location.pathname ==='/';
-
   //Общие правила для всех вкладок
   function visit(){
     setIsVisited(true);
@@ -285,6 +290,18 @@ function App() {
     Api.updateUserInfo(userInfo)
     .then((res) => {
       setCurrentUser({name:res.name, email:res.email})
+      setSuccess(true)
+    })
+    .catch((err) => {
+      if(err){
+        err
+        .then((er) => {
+          setServerErrorIsVisible(true)
+          setServerErrorMessage(er.message)
+          setFormValid(true)
+          setDisabled(false)
+        })
+      }
     })
   }
 
@@ -385,6 +402,16 @@ function App() {
             loggedIn={loggedIn}
             updateUser={updateUser}
             logout={logout}
+            serverErrorIsVisible={serverErrorIsVisible}
+            serverErrorMessage={serverErrorMessage}
+            formValid={formValid}
+            setFormValid ={setFormValid}
+            disabled={disabled}
+            setDisabled = {setDisabled}
+            setServerErrorIsVisible = {setServerErrorIsVisible}
+            setServerErrorMessage = {setServerErrorMessage}
+            success = {success}
+            setSuccess = {setSuccess}
           />}/>
         <Route
           path='/signup'
