@@ -141,7 +141,7 @@ export default function Register({onRegistrate, apiErrorMessage, apiErrorIsActiv
 					</div>
 					<div className='register__form-block register__form-block_email'>
 						<label  className='register__label'>E-mail</label>
-						<input value={email} onBlur={blurHandler} onChange={handleEmailChange} name='email' type="email" className='register__input' placeholder='Виталий'/>
+						<input value={email} onBlur={blurHandler} onChange={handleEmailChange} name='email' type="email" className='register__input' placeholder='email@yandex.ru'/>
 						<label className={`register__error ${!emailErrorIsVisible ? 'register__error_disabled': ''}`}>{emailErrorMessage}</label>
 					</div>
 					<div className='register__form-block register__form-block_password'>

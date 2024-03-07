@@ -3,6 +3,8 @@ import MoviesCard from '../MoviesCard/MoviesCard'
 import Preloader from '../Preloader/Preloader'
 import React from 'react'
 export default function MoviesCardList(props){
+    const [columnNumber, setColumnNumber] = React.useState(window.innerWidth > 768? 3 : window.innerWidth >320? 2 : 1);
+    const [rowsNumber, setRowsNumber] = React.useState(window.innerWidth > 768? 4: window.innerWidth> 320? 4: 5);
     const [isOverFilled, setIsOverFilled] = React.useState(false);
     const [films, setFilms] = React.useState(props.films);
     const [visibleFilms, setVisibleFilms] = React.useState([]);
@@ -20,30 +22,14 @@ export default function MoviesCardList(props){
         }
     }
     function filterFilms(){
-        if(width>768 && films.length > 12){
-            if(props.visibleFilmsLength<=12){
-                const reducedArray = films.slice(0,12);
+        if(films.length > columnNumber*rowsNumber){
+                const reducedArray = films.slice(0,columnNumber*rowsNumber);
+                setIsOverFilled(true)
                 setVisibleFilms(reducedArray)
-            }
-            else{
-                const reducedArray = films.slice(0,props.visibleFilmsLength);
-                setVisibleFilms(reducedArray)              
-            }
-        } else if((width>768 && films.length <= 12)){
-            setVisibleFilms(films)
+        } else if((films.length <= columnNumber*rowsNumber)){
+                setVisibleFilms(films)
+                setIsOverFilled(false) 
         }    
-        if(width <= 768 && films.length > 8){
-            const reducedArray = films.slice(0,8);
-            setVisibleFilms(reducedArray)
-        } else if((width<=768 && films.length <= 8)){
-            setVisibleFilms(films)
-        } 
-        if(width <= 320 && films.length > 5){
-            const reducedArray = films.slice(0,5);
-            setVisibleFilms(reducedArray)
-        } else if((width<=320 &&films.length <= 5)){
-            setVisibleFilms(films)
-        }
     }
     React.useEffect(() => {
         if(films.length !== 0){
@@ -66,62 +52,44 @@ export default function MoviesCardList(props){
             window.removeEventListener('resize', handleWindowEventDebounce)
         }
     },[])
-
+    React.useEffect(() => {
+        setRowsNumber(columnNumber===1? 5 : 4)
+        filterFilms()
+    },[columnNumber])
+    React.useEffect(() => {
+        filterFilms()
+    },[rowsNumber])
     React.useEffect(() => {
         const filter = props.filterFilms()
             setFilms(filter())
     },[props.checkboxValue,props.films])
-    React.useEffect(() => {
-        if(films.length !== 0){
-            if(films.length > visibleFilms.length){
-                setIsOverFilled(true)
-            }
-            else{
-                setIsOverFilled(false)               
-            }
-        }
-    },[visibleFilms])
+
     function handleMoreButtonEffect(){
-        const length = visibleFilms.length
-        if(window.innerWidth>768){
-            props.changeVisibleFilmsLength(length+3);
-            if(props.type === 'find'){
-                localStorage.setItem('visibleFilmsLength', JSON.stringify(length+3));
-            }
-            else if(props.type === 'save'){
-                localStorage.setItem('savedVisibleFilmLength', JSON.stringify(length+3));                
-            }
+        if(columnNumber===1){
+            setRowsNumber(rowsNumber+2)
         }
-        if(window.innerWidth<=768){
-            props.changeVisibleFilmsLength(length+2);
-            if(props.type === 'find'){
-                localStorage.setItem('visibleFilmsLength', JSON.stringify(length+2));
-            }
-            else if(props.type === 'save'){
-                localStorage.setItem('savedVisibleFilmLength', JSON.stringify(length+2));                
-            }
-        }
-        if(window.innerWidth<=768){
-            props.changeVisibleFilmsLength(length+2);
-            if(props.type === 'find'){
-                localStorage.setItem('visibleFilmsLength', JSON.stringify(length+2));
-            }
-            else if(props.type === 'save'){
-                localStorage.setItem('savedVisibleFilmLength', JSON.stringify(length+2));                
-            }
+        else{
+            setRowsNumber(rowsNumber+1)
         }
         }
+    React.useEffect(() => {
+        try{
+            setColumnNumber(getComputedStyle(document.querySelector(".moviescardlist__cards")).gridTemplateColumns.split(" ").length);
+        }
+        catch{
+            return
+        }
+    },[width,visibleFilms])
     React.useEffect(() => {
         filterFilms()
-    },[props.visibleFilmsLength])
-
+    },[columnNumber])
     return (
         <section className='moviescardlist'>
             {props.preloaderDisplay?
                 <Preloader/>:
                 ''
             }
-            {visibleFilms.length !== 0 && !props.preloaderDisplay ?
+            {!props.preloaderDisplay?
             <>
                 <ul className='moviescardlist__cards'>
                     {visibleFilms.map((film, i) => (
@@ -144,8 +112,8 @@ export default function MoviesCardList(props){
                 {
                     isOverFilled ? <button type='button' onClick={handleMoreButtonEffect} className='moviescardlist__button'>Ещё</button> : <></>
                 }
-            </> : 
-            !props.preloaderDisplay && props.isVisited ?
+            </> : ""}
+            {!props.preloaderDisplay && props.isVisited && films.length === 0 ?
             <h2 className='moviescardlist__not-found'>Ничего не найдено</h2> : ''
             }
         </section>

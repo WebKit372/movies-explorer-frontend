@@ -22,7 +22,7 @@ function App() {
   const [apiErrorIsActive,setApiErrorIsActive] = React.useState(false);
   const [apiErrorMessage, setApiErrorMessage] = React.useState('');
   const [lang, setLang] = React.useState('ru')
-  const [visibleFilmsLength, setVisibleFilmsLength] = React.useState(JSON.parse(localStorage.getItem('visibleFilmsLength')));
+  const [visibleFilmsLength, setVisibleFilmsLength] = React.useState(0);
   const [savedVisibleFilmLength, setSavedVisibleFilmLength] = React.useState(JSON.parse(localStorage.getItem('savedVisibleFilmLength')));
   const [loggedIn, setLoggedIn] = React.useState(JSON.parse(localStorage.getItem('loggedIn')));
   const [isFilmsVisited, setIsFilmsVisited] = React.useState(false);
