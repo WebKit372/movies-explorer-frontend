@@ -12,7 +12,7 @@ import Login from '../Login/Login';
 import NotFound from '../NotFound/NotFound';
 import apiTool from '../../utils/MoviesApi';
 import { Helmet, HelmetProvider  } from "react-helmet-async";
-import ProtectedRouteElement from '../ProtectedRoute';
+import {ProtectedRouteElement, ProtectedRouteElementLoggedIn} from '../ProtectedRoute';
 import { AppContext } from '../AppContext';
 import mainApi from '../../utils/MainApi';
 
@@ -416,24 +416,28 @@ function App() {
         <Route
           path='/signup'
           element={
-              <Register 
-                hideErrorDisplay={hideErrorDisplay}
-                onRegistrate={onRegistrate}
-                apiErrorIsActive={apiErrorIsActive}
-                apiErrorMessage={apiErrorMessage}
-              />
+            <ProtectedRouteElementLoggedIn
+              element={Register}
+              loggedIn={loggedIn}
+              hideErrorDisplay={hideErrorDisplay}
+              onRegistrate={onRegistrate}
+              apiErrorIsActive={apiErrorIsActive}
+              apiErrorMessage={apiErrorMessage}
+            />
             }
         />
         <Route
           path='/signin'
           element={
-            <Login 
+            <ProtectedRouteElementLoggedIn
+              element={Login}
+              loggedIn={loggedIn}
               hideErrorDisplay={hideErrorDisplay}
               onLogin={onLogin}
               apiErrorIsActive={apiErrorIsActive}
               apiErrorMessage={apiErrorMessage}
             />
-          }
+            }
         />
         <Route path="*"element={ <NotFound/> }/>
       </Routes>
