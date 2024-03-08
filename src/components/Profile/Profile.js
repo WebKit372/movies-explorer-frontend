@@ -26,6 +26,9 @@ export default function Profile({updateUser, logout, serverErrorIsVisible,setSer
         })
         return({result:result.includes(false), error:errorMessage})
       }
+  React.useEffect(() => {
+    setDisabled(true)
+  },[])
     //Валидация имени
 	function handleNameChange(e){
 		setName(e.target.value);
@@ -47,8 +50,8 @@ export default function Profile({updateUser, logout, serverErrorIsVisible,setSer
   }
   React.useEffect(()=>{
   const result = checkValidation(emailForm,email);
-  setServerErrorIsVisible(false)
-  setServerErrorMessage('')
+  // setServerErrorIsVisible(false)
+  // setServerErrorMessage('')
   if(result.result){
     setDirtyEmail(true);
     setEmailErrorMessage(result.error)
@@ -79,7 +82,7 @@ export default function Profile({updateUser, logout, serverErrorIsVisible,setSer
     }
   }
   React.useEffect(()=>{
-    if((!dirtyName && !dirtyEmail && !serverErrorIsVisible)){
+    if((!dirtyName && !dirtyEmail)){
       if(currentUser.name === name && currentUser.email === email){
         setFormValid(true)
       } else{
@@ -88,7 +91,7 @@ export default function Profile({updateUser, logout, serverErrorIsVisible,setSer
     } else{
       setFormValid(true)
     }
-  },[dirtyName,dirtyEmail, serverErrorIsVisible, disabled,name,email])
+  },[dirtyName,dirtyEmail,name,email])
   function updateUserInfo(e){
     e.preventDefault();
     updateUser({name: name,email : email});
@@ -121,13 +124,13 @@ export default function Profile({updateUser, logout, serverErrorIsVisible,setSer
                         <button type='button' onClick={()=>{setDisabled(false)}} className='profile__button profile__button_edit'>Редактировать</button>
                         <button type='button' onClick={logout} className='profile__button profile__button_exit'>Выйти из аккаунта</button>
                         <label className={`profile_success ${!success? 'profile_success_disabled': ''}`}>Успешно обновлено!</label>
+                        <label className={`profile__error-server ${!serverErrorIsVisible ? 'profile__error-server_disabled': ''}`}>{`${serverErrorMessage ? `${serverErrorMessage}`:''}`}</label>
                     </div> :
                     <div className='profile__button-block'>
                     <div className='profile__error-block'>
                     <label className={`profile__error ${!emailErrorIsVisible? 'profile__error_disabled': ''}`}>{`${emailErrorMessage ?`Поле Email: ${emailErrorMessage}`: ''}`}</label>
                     <label className={`profile__error ${!nameErrorIsVisible ? 'profile__error_disabled': ''}`}>{`${nameErrorMessage ? `Поле Имя: ${nameErrorMessage}`:''}`}</label>
                     <label className={`profile__error ${!serverErrorIsVisible ? 'profile__error_disabled': ''}`}>{`${serverErrorMessage ? `${serverErrorMessage}`:''}`}</label>
-                    
                     </div>
                     <button disabled={formValid} type='submit'  className='profile__button profile__button_save'>Сохранить</button>
                     </div>

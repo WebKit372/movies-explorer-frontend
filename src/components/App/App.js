@@ -291,15 +291,18 @@ function App() {
     .then((res) => {
       setCurrentUser({name:res.name, email:res.email})
       setSuccess(true)
+      setServerErrorIsVisible(false)
     })
     .catch((err) => {
       if(err){
         err
         .then((er) => {
           setServerErrorIsVisible(true)
+          setTimeout(() => setServerErrorIsVisible(false), 2000)
           setServerErrorMessage(er.message)
-          setFormValid(true)
-          setDisabled(false)
+          getUser()
+          // setFormValid(true)
+          // setDisabled(false)
         })
       }
     })
@@ -309,7 +312,7 @@ function App() {
     Api.logout()
     .then((res) => {
       localStorage.clear();
-      navigate('/signin',{replace: true})
+      navigate('/',{replace: true})
       setLoggedIn(false)
       setCheckboxValue(false);
       setSaveCheckboxValue(false);
