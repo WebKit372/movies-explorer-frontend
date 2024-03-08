@@ -15,6 +15,7 @@ export default function SavedMovies(props){
               changeVisibleFilmsLength={props.changeVisibleFilmsLength}
               visit={props.visit}
               type='save'
+              resetSavedForm={props.resetSavedForm}
             />
             <MoviesCardList
               key={props.getFilms}

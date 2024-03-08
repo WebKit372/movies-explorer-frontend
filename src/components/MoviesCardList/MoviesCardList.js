@@ -61,6 +61,7 @@ export default function MoviesCardList(props){
     },[rowsNumber])
     React.useEffect(() => {
         const filter = props.filterFilms()
+        setRowsNumber(columnNumber===1? 5 : 4)
             setFilms(filter())
     },[props.checkboxValue,props.films])
 

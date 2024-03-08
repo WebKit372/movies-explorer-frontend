@@ -23,7 +23,7 @@ function App() {
   const [apiErrorMessage, setApiErrorMessage] = React.useState('');
   const [lang, setLang] = React.useState('ru')
   const [visibleFilmsLength, setVisibleFilmsLength] = React.useState(0);
-  const [savedVisibleFilmLength, setSavedVisibleFilmLength] = React.useState(JSON.parse(localStorage.getItem('savedVisibleFilmLength')));
+  const [savedVisibleFilmLength, setSavedVisibleFilmLength] = React.useState(0);
   const [loggedIn, setLoggedIn] = React.useState(JSON.parse(localStorage.getItem('loggedIn')));
   const [isFilmsVisited, setIsFilmsVisited] = React.useState(false);
   const [isSavedMoviesVisited, setIsSavedMoviesVisited] = React.useState(false);
@@ -31,7 +31,6 @@ function App() {
   const [checkboxValue, setCheckboxValue] = React.useState(false);
   const [saveCheckboxValue, setSaveCheckboxValue] = React.useState(false);
   const [isCheckboxChanged, setIsCheckboxChanged] = React.useState(false);
-  const [isSaveCheckboxChanged, setIsSaveCheckboxChanged] = React.useState(false);
   const [searchFormName, setSearchFormName] = React.useState('')
   const [saveSearchFormName, setSaveSearchFormName] = React.useState('');
   const [searchedSavedMovies, setSearchedSavedMovies] = React.useState([]);
@@ -223,16 +222,6 @@ function App() {
   function saveArrayDeleteMovie(movie){
     setSavedMovies((state)=> state.filter(i => i.movieId !== movie.movieId))
   }
-  React.useEffect(() => {
-    const checkbox = JSON.parse(localStorage.getItem('saveCheckbox'));
-    const search = JSON.parse(localStorage.getItem('saveSearch'));
-    if(checkbox){
-      setSaveCheckboxValue(checkbox);
-    }
-    if(search){
-      setSaveSearchFormName(search);
-    }
-  },[])
   React.useEffect(()=> {
     searchSavedMovies(saveSearchFormName)
   },[savedMovies])
@@ -240,18 +229,14 @@ function App() {
   function handleSaveChange(e){
     setSaveSearchFormName(e.target.value)
   }
+  function resetSavedForm(){
+    setSaveSearchFormName('');
+    setSaveCheckboxValue(false);
+    searchSavedMovies('');
+  }
   function changeSaveCheckbox(){
     setSaveCheckboxValue(!saveCheckboxValue);
-    setIsSaveCheckboxChanged(true);
   }
-  React.useEffect(() => {
-    if(isSaveCheckboxChanged){
-      localStorage.setItem('saveCheckbox', JSON.stringify(saveCheckboxValue))
-    }
-  },[saveCheckboxValue])
-  React.useEffect(()=> {
-      localStorage.setItem('saveSearch', JSON.stringify(saveSearchFormName));
-  },[saveSearchFormName]) 
   //Действия с учетной записью
   function onRegistrate (name, email, password){
     Api.signup({name, email, password})
@@ -397,6 +382,7 @@ function App() {
           addMovie={addMovie}
           arrayAddSavedMovies={arrayAddSavedMovies}
           arrayDeleteMovie={saveArrayDeleteMovie}
+          resetSavedForm={resetSavedForm}
           />
         }/>
         <Route path='/profile' element={

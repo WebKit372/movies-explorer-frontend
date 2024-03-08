@@ -15,6 +15,11 @@ export default function SearchForm(props){
         props.changeVisibleFilmsLength(0)
         props.visit();
     }
+    React.useEffect(()=> {
+        if(props.type === 'save'){
+            props.resetSavedForm()
+        }
+    },[])
     return(
         <form className="search-form" onSubmit={onSubmit}>
             <div className="search-form__bar">
