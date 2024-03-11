@@ -6,7 +6,6 @@ import logo from '../../images/logo.svg';
 export default function Header (props) {
     const [visible, setVisible] = React.useState(false);
     function changeVisible(){
-        console.log(props.location.pathname)
         if(visible){
             return setVisible(false);
         }
@@ -18,7 +17,7 @@ export default function Header (props) {
             <NavLink to="/">
                 <img src={logo} className='header__logo' alt='Логотип'/>
             </NavLink>
-                {props.authorized?
+                {props.loggedIn?
                 <>
                     <div className="header__info-block">
                         <div className="header__films-block">
